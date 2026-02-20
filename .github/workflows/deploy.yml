@@ -26,7 +26,9 @@ jobs:
             pm2 start ecosystem.config.js
             sleep 5
             pm2 status
-            pm2 logs sgu-backend --lines 20 --nostream
+            cd ~
+            echo "--- CADDYFILE DUMP ---"
+            cat /etc/caddy/Caddyfile || true
             echo "--- LOCALHOST TEST ---"
             curl -i http://localhost:8022/ || true
             curl -i http://localhost:8022/health || true

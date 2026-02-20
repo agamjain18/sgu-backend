@@ -37,7 +37,12 @@ app.add_middleware(
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to SGU Backend API"}
+    return {
+        "message": "Welcome to SGU Backend API",
+        "status": "Online",
+        "version": "1.1.0",
+        "documentation": "/docs"
+    }
 
 @app.get("/health")
 def health_check():

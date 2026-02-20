@@ -51,18 +51,17 @@ jobs:
 
             # Validate and reload Caddy
             echo "--- Validating Caddyfile ---"
-            sudo caddy validate --config /etc/caddy/Caddyfile && \
-              sudo systemctl reload caddy && \
-              echo "Caddy reloaded successfully" || \
-              echo "WARNING: Caddy validation/reload failed"
+            sudo caddy validate --config /etc/caddy/Caddyfile > ~/caddy_validation.log 2>&1 || true
+            sudo cat ~/caddy_validation.log | sudo tee /var/www/agamjain.online/caddy-validation-error.txt
 
-            # Dump updated Caddyfile
-            sudo cat /etc/caddy/Caddyfile | sudo tee /var/www/agamjain.online/caddyfile-dump.txt
+            if sudo caddy validate --config /etc/caddy/Caddyfile; then
+              sudo systemctl reload caddy
+              echo "Caddy reloaded successfully"
+            else
+              echo "CRITICAL: Caddy validation failed. Check /var/www/agamjain.online/caddy-validation-error.txt"
+            fi
 
             # Diagnostics
-            sleep 3
-            echo "--- Smoke test ---"
-            curl -si https://api.agamjain.online/sgu/ | head -10 || true
-            pm2 list | sudo tee /var/www/agamjain.online/pm2-debug.txt
-            pm2 logs sgu-backend --lines 50 --nostream | sudo tee /var/www/agamjain.online/pm2-backend-logs.txt
+            sudo cat /etc/caddy/Caddyfile | sudo tee /var/www/agamjain.online/caddyfile-dump.txt
             sudo systemctl status caddy --no-pager | sudo tee /var/www/agamjain.online/caddy-status.txt
+            pm2 logs sgu-backend --lines 100 --nostream | sudo tee /var/www/agamjain.online/pm2-backend-logs.txt

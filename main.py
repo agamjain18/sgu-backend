@@ -22,6 +22,7 @@ if not os.path.exists(UPLOAD_DIR):
     os.makedirs(UPLOAD_DIR)
 
 app = FastAPI(title="SGU Backend API")
+print("--- SGU Backend API is starting up on port 5050 ---")
 
 from fastapi.staticfiles import StaticFiles
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")

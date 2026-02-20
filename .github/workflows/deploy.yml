@@ -22,4 +22,5 @@ jobs:
             source venv/bin/activate
             pip install -r requirements.txt
             python3 seed.py
-            pm2 restart sgu-backend || pm2 start ecosystem.config.js
+            pm2 delete sgu-backend || true
+            pm2 start ecosystem.config.js

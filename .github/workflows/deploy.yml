@@ -27,26 +27,46 @@ jobs:
             sleep 5
             pm2 status
 
+            # Diagnostics
+            echo "--- Caddy Version ---"
+            caddy version || true
+
             # --- Patch Caddyfile: serve api.agamjain.online/sgu/ as static files ---
             sudo python3 << 'PYEOF'
             import re
+            import os
 
             CADDYFILE = '/etc/caddy/Caddyfile'
+            if not os.path.exists(CADDYFILE):
+                print("ERROR: Caddyfile not found at /etc/caddy/Caddyfile")
+                exit(0)
+
             with open(CADDYFILE, 'r') as f:
                 content = f.read()
 
-            # Use regex to replace the SGU API block on api.agamjain.online
-            old_pattern = r'(    # SGU API\n    handle /sgu \{\n        redir /sgu/\n    \}\n    handle_path /sgu/\* \{\n        reverse_proxy localhost:8022\n    \})'
+            # Robust replacement for SGU block in api.agamjain.online site block
+            # We look for the api.agamjain.online block and replace the SGU section
+            # This regex is more flexible to catch different versions of the block
+            sgu_pattern = r'# SGU API.*?handle.*?\{.*?redir.*?\}'
+            
+            new_sgu_block = """    # SGU API
+    handle /sgu {
+        redir /sgu/
+    }
+    handle_path /sgu/* {
+        reverse_proxy localhost:8022
+    }"""
 
-            new_block = "    # SGU Website\n    handle /sgu {\n        redir /sgu/\n    }\n    handle_path /sgu/* {\n        reverse_proxy localhost:8022\n    }"
-
-            new_content, count = re.subn(old_pattern, new_block, content)
-            if count > 0:
-                with open(CADDYFILE, 'w') as f:
-                    f.write(new_content)
-                print(f"SUCCESS: Replaced {count} block(s). Caddyfile updated.")
+            # Try to replace the old block if it exists
+            if "# SGU API" in content:
+                # Find the existing # SGU API block until the next # or }
+                content = re.sub(r'# SGU API.*?(?=\s+#|\s+\})', new_sgu_block + "\n", content, flags=re.DOTALL)
+                print("SUCCESS: Patched SGU block via regex.")
             else:
-                print("WARNING: Pattern not matched. Caddyfile might already be correct.")
+                print("WARNING: # SGU API block not found in Caddyfile.")
+
+            with open(CADDYFILE, 'w') as f:
+                f.write(content)
             PYEOF
 
             # Validate and reload Caddy

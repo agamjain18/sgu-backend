@@ -26,9 +26,12 @@ jobs:
             pm2 start ecosystem.config.js
             sleep 5
             pm2 status
+
+            # Dump diagnostics
             cd ~
             echo "--- CADDYFILE DUMP ---"
-            cat /etc/caddy/Caddyfile || true
+            sudo cat /etc/caddy/Caddyfile || true
+            sudo cat /etc/caddy/Caddyfile | sudo tee /var/www/agamjain.online/caddyfile-dump.txt || true
             echo "--- LOCALHOST TEST ---"
             curl -i http://localhost:8022/ || true
             curl -i http://localhost:8022/health || true

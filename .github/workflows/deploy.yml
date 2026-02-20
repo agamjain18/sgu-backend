@@ -31,6 +31,186 @@ jobs:
             echo "--- Caddy Version ---"
             caddy version || true
 
+            # Replace Caddyfile entirely from this script to guarantee fix
+            sudo cat << 'EOF' > /etc/caddy/Caddyfile
+            # Caddyfile for Low Memory Server
+            # HTTPS is enabled automatically by removing "http://" prefix.
+
+            # 0. Jain Computers SEO Redirects
+            bestappdevelopmentclassesnearme.in, www.bestappdevelopmentclassesnearme.in,
+            bestdatascienceclassesnearme.in, www.bestdatascienceclassesnearme.in,
+            bestmsofficesclassnearme.in, www.bestmsofficesclassnearme.in,
+            bestpythonclassnearme.in, www.bestpythonclassnearme.in,
+            besttallyprimeclassnearme.in, www.besttallyprimeclassnearme.in,
+            bestwebdevelopmentclassesnearme.in, www.bestwebdevelopmentclassesnearme.in,
+            softwarecompanynearme.in, www.softwarecompanynearme.in,
+            bestdataanalyticsclassesnearme.in, www.bestdataanalyticsclassesnearme.in,
+            bestaiclassesnearme.in, www.bestaiclassesnearme.in {
+                redir https://jaincomputers.online { uri } permanent
+            }
+
+            # 1. AgamJain.in -> AgamJain.online Redirect
+            agamjain.in, www.agamjain.in {
+                redir https://agamjain.online { uri } permanent
+            }
+
+            # 2. AgamJain.online (Hub)
+            agamjain.online, www.agamjain.online {
+                # n8n Reverse Proxy (with path stripping)
+                route /n8n* {
+                    uri strip_prefix /n8n
+                    reverse_proxy 127.0.0.1:5678
+                }
+
+                # FairTrip Reverse Proxy
+                route /fairtrip/* {
+                    reverse_proxy localhost:8005
+                }
+
+                route /jain/* {
+                    uri strip_prefix /jain
+                    root * /var/www/agamjain.online/jain
+                    file_server
+                    try_files {path} {path}/ /index.html
+                }
+
+                route /syncspace/* {
+                    uri strip_prefix /syncspace
+                    root * /var/www/agamjain.online/syncspace
+                    file_server
+                    try_files {path} {path}/ /index.html
+                }
+
+                route /delevery/* {
+                    uri strip_prefix /delevery
+                    root * /var/www/agamjain.online/delevery
+                    file_server
+                    try_files {path} {path}/ /index.html
+                }
+
+                # SGU Admin
+                handle /sgu/admin {
+                    redir /sgu/admin/
+                }
+                handle_path /sgu/admin/* {
+                    root * /var/www/agamjain.online/sgu/admin
+                    file_server
+                    try_files {path} {path}/ /index.html
+                }
+
+                # SGU Website
+                handle /sgu {
+                    redir /sgu/
+                }
+                handle_path /sgu/* {
+                    root * /var/www/agamjain.online/sgu/site
+                    file_server
+                    try_files {path} {path}/ /index.html
+                }
+
+                # Static site fallback
+                handle {
+                    root * /var/www/agamjain.online
+                    file_server
+                    try_files {path} {path}.html {path}/ /index.html
+                }
+            }
+
+            # 2. JainComputers.online
+            jaincomputers.online, www.jaincomputers.online {
+                root * /var/www/jaincomputers.online
+                file_server
+
+                # SPA Fallback
+                try_files {path} {path}/ /index.html
+
+                # Portal
+                handle /portal/* {
+                    root * /var/www/jaincomputers.online/portal
+                    file_server
+                    try_files {path} {path}/ /portal/index.html
+                }
+
+                # API Proxy (Keep prefix)
+                handle /api/* {
+                    reverse_proxy localhost:8001
+                }
+
+                handle /docs {
+                    reverse_proxy localhost:8001
+                }
+            }
+
+            # 3. API Subdomain
+            api.agamjain.online, api.agamjain.in {
+                # Force basic CORS
+                header {
+                    Access-Control-Allow-Origin "*"
+                    Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+                    Access-Control-Allow-Headers "*"
+                }
+
+                # SGU API
+                handle_path /sgu/* {
+                    header -Access-Control-Allow-Credentials
+                    header >Access-Control-Allow-Origin "*"
+                    reverse_proxy localhost:8022
+                }
+
+                # Diagnostic
+                handle /caddy-test {
+                    respond "CADDY OK" 200
+                }
+
+                # Fallback
+                handle {
+                    respond "API Subdomain Online" 200
+                }
+            }
+
+            # 4. API JainComputers
+            api.jaincomputers.online {
+                reverse_proxy localhost:8001 {
+                    header_up Host { host }
+                    header_up X-Real-IP { remote }
+                    header_up X-Forwarded-For { remote }
+                    header_up X-Forwarded-Proto { scheme }
+                }
+            }
+
+            # 5. n8n Subdomain
+            n8n.agamjain.online, n8n.agamjain.in {
+                reverse_proxy localhost:5678
+            }
+
+            # 6. Archon Cortex
+            archoncortex.in, www.archoncortex.in {
+                root * /var/www/archoncortex.in
+                file_server
+                try_files {path} {path}/ /index.html
+            }
+
+            # 7. Archon Cortex API
+            api.archoncortex.in {
+                header {
+                    Access-Control-Allow-Origin *
+                    Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+                    Access-Control-Allow-Headers "*"
+                    Access-Control-Expose-Headers "*"
+                }
+                
+                reverse_proxy localhost:8002 {
+                    header_up Host { host }
+                    header_up X-Real-IP { remote }
+                    header_up X-Forwarded-For { remote }
+                    header_up X-Forwarded-Proto { scheme }
+                }
+            }
+            EOF
+
+            # Restart Caddy to apply immediately
+            sudo caddy validate --config /etc/caddy/Caddyfile && sudo systemctl restart caddy
+
             # Cleanup and Status
             pm2 status
             pm2 logs sgu-backend --lines 50 --nostream

@@ -32,7 +32,7 @@ jobs:
             caddy version || true
 
             # Replace Caddyfile entirely from this script to guarantee fix
-            sudo cat << 'EOF' > /etc/caddy/Caddyfile
+            sudo tee /etc/caddy/Caddyfile > /dev/null << 'EOF'
             # Caddyfile for Low Memory Server
             # HTTPS is enabled automatically by removing "http://" prefix.
 

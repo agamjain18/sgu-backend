@@ -2,7 +2,7 @@ module.exports = {
     apps: [{
         name: "sgu-backend",
         script: "./venv/bin/python3",
-        args: "-m uvicorn main:app --host 0.0.0.0 --port 8011 --proxy-headers",
+        args: "-m uvicorn main:app --host 0.0.0.0 --port 8022 --proxy-headers",
         interpreter: "none",
         env: {
             NODE_ENV: "production",

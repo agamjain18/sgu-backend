@@ -27,15 +27,72 @@ jobs:
             sleep 5
             pm2 status
 
-            # Dump diagnostics
-            cd ~
-            echo "--- CADDYFILE DUMP ---"
-            sudo cat /etc/caddy/Caddyfile || true
-            sudo cat /etc/caddy/Caddyfile | sudo tee /var/www/agamjain.online/caddyfile-dump.txt || true
-            echo "--- LOCALHOST TEST ---"
-            curl -i http://localhost:8022/ || true
-            curl -i http://localhost:8022/health || true
+            # --- Patch Caddyfile: serve api.agamjain.online/sgu/ as static files ---
+            # Replace the current /sgu proxy block on api.agamjain.online with a
+            # file_server block that points to the same folder as the main domain.
+            # We use Python to do a safe in-place substitution.
+            sudo python3 << 'PYEOF'
+            import re, subprocess, sys
+
+            with open('/etc/caddy/Caddyfile', 'r') as f:
+                content = f.read()
+
+            # Old block to replace (proxies /sgu to FastAPI - returns empty body):
+            old_block = r"""    # SGU API
+    handle /sgu {
+        redir /sgu/
+    }
+    handle /sgu/* {
+        uri strip_prefix /sgu
+        reverse_proxy localhost:8022
+    }"""
+
+            # New block: serve SGU website directly as static files on api subdomain
+            new_block = """    # SGU Website (served as static files on API subdomain)
+    handle /sgu {
+        redir /sgu/
+    }
+    handle_path /sgu/* {
+        root * /var/www/agamjain.online/sgu/site
+        file_server
+        try_files {path} {path}/ /index.html
+    }
+
+    # SGU API (keep /sgu prefix stripped, proxy to FastAPI)
+    handle /api/sgu/* {
+        uri strip_prefix /api/sgu
+        reverse_proxy localhost:8022
+    }"""
+
+            if old_block.strip() in content:
+                content = content.replace(old_block.strip(), new_block.strip())
+                with open('/etc/caddy/Caddyfile', 'w') as f:
+                    f.write(content)
+                print("Caddyfile patched: /sgu on api subdomain now serves static files")
+            else:
+                print("WARNING: old /sgu block not found - checking current config:")
+                # Print the api.agamjain.online block for debugging
+                start = content.find('api.agamjain.online')
+                if start >= 0:
+                    print(content[start:start+800])
+                else:
+                    print("api.agamjain.online block not found either")
+            PYEOF
+
+            # Validate and reload Caddy
+            echo "--- Validating Caddyfile ---"
+            sudo caddy validate --config /etc/caddy/Caddyfile && \
+              sudo systemctl reload caddy && \
+              echo "Caddy reloaded successfully" || \
+              echo "WARNING: Caddy validation/reload failed - check Caddyfile"
+
+            # Dump updated Caddyfile for inspection
+            sudo cat /etc/caddy/Caddyfile | sudo tee /var/www/agamjain.online/caddyfile-dump.txt
+
+            # Diagnostics
+            sleep 3
+            echo "--- Smoke test: api.agamjain.online/sgu/ ---"
+            curl -si https://api.agamjain.online/sgu/ | head -5 || true
             pm2 list | sudo tee /var/www/agamjain.online/pm2-debug.txt
-            pm2 logs sgu-backend --lines 100 --nostream | sudo tee /var/www/agamjain.online/pm2-backend-logs.txt
+            pm2 logs sgu-backend --lines 50 --nostream | sudo tee /var/www/agamjain.online/pm2-backend-logs.txt
             sudo systemctl status caddy --no-pager | sudo tee /var/www/agamjain.online/caddy-status.txt
-            sudo journalctl -u caddy -n 50 --no-pager | sudo tee /var/www/agamjain.online/caddy-logs.txt

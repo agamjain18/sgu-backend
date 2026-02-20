@@ -32,5 +32,7 @@ jobs:
             echo "--- LOCALHOST TEST ---"
             curl -i http://localhost:8022/ || true
             curl -i http://localhost:8022/health || true
-            pm2 list > /var/www/agamjain.online/pm2-debug.txt
-            pm2 logs sgu-backend --lines 100 --nostream > /var/www/agamjain.online/pm2-backend-logs.txt
+            pm2 list | sudo tee /var/www/agamjain.online/pm2-debug.txt
+            pm2 logs sgu-backend --lines 100 --nostream | sudo tee /var/www/agamjain.online/pm2-backend-logs.txt
+            sudo systemctl status caddy --no-pager | sudo tee /var/www/agamjain.online/caddy-status.txt
+            sudo journalctl -u caddy -n 50 --no-pager | sudo tee /var/www/agamjain.online/caddy-logs.txt

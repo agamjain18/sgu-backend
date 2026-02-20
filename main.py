@@ -12,7 +12,15 @@ from fastapi import File, UploadFile
 import uuid
 from datetime import datetime
 import auth
+import re
 from fastapi.security import OAuth2PasswordRequestForm
+
+def slugify(text: str) -> str:
+    # Lowercase, replace spaces with hyphens, remove special characters
+    text = text.lower()
+    text = re.sub(r'[^\w\s-]', '', text)
+    text = re.sub(r'[\s_-]+', '-', text)
+    return text.strip('-')
 
 # Create the database tables
 models.Base.metadata.create_all(bind=engine)
@@ -84,7 +92,11 @@ async def read_users_me(current_user: models.User = Depends(auth.get_current_use
 # PRODUCTS CRUD
 @app.post("/products/", response_model=schemas.Product)
 def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_user)):
-    db_product = models.Product(**product.dict())
+    product_dict = product.dict()
+    if not product_dict.get('slug'):
+        product_dict['slug'] = slugify(product_dict['name'])
+    
+    db_product = models.Product(**product_dict)
     db.add(db_product)
     db.commit()
     db.refresh(db_product)
@@ -102,13 +114,29 @@ def read_product(product_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Product not found")
     return db_product
 
+@app.get("/products/slug/{slug}", response_model=schemas.Product)
+def read_product_by_slug(slug: str, db: Session = Depends(get_db)):
+    db_product = db.query(models.Product).filter(models.Product.slug == slug).first()
+    if db_product is None:
+        # Fallback to search by ID if it's numeric
+        if slug.isdigit():
+            db_product = db.query(models.Product).filter(models.Product.id == int(slug)).first()
+        
+    if db_product is None:
+        raise HTTPException(status_code=404, detail="Product not found")
+    return db_product
+
 @app.put("/products/{product_id}", response_model=schemas.Product)
 def update_product(product_id: int, product: schemas.ProductCreate, db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_user)):
     db_product = db.query(models.Product).filter(models.Product.id == product_id).first()
     if db_product is None:
         raise HTTPException(status_code=404, detail="Product not found")
     
-    for key, value in product.dict().items():
+    product_dict = product.dict()
+    if not product_dict.get('slug'):
+        product_dict['slug'] = slugify(product_dict['name'])
+        
+    for key, value in product_dict.items():
         setattr(db_product, key, value)
     
     db.commit()

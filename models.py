@@ -6,6 +6,7 @@ class Product(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
+    slug = Column(String, index=True, unique=True, nullable=True)
     sku_name = Column(String, index=True)
     country_of_origin = Column(String)
     quality = Column(String)

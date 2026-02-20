@@ -3,6 +3,7 @@ from typing import Optional
 
 class ProductBase(BaseModel):
     name: str
+    slug: Optional[str] = None
     sku_name: str
     country_of_origin: str
     quality: str

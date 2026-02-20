@@ -44,11 +44,16 @@ jobs:
             with open(CADDYFILE, 'r') as f:
                 content = f.read()
 
-            # Robust replacement for SGU block in api.agamjain.online site block
-            # We look for the api.agamjain.online block and replace the SGU section
-            # This regex is more flexible to catch different versions of the block
-            sgu_pattern = r'# SGU API.*?handle.*?\{.*?redir.*?\}'
+            # 1. Fix the global header block for api.agamjain.online
+            # Find the section starting with api.agamjain.online and its first header block
+            header_pattern = r'(api\.agamjain\.online.*?\n\s+header \{).*?(\n\s+\})'
+            new_header_block = r'\1\n        Access-Control-Allow-Origin *\n        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"\n        Access-Control-Allow-Headers "*"\n        Access-Control-Expose-Headers "*"\2'
             
+            if "api.agamjain.online" in content:
+                content = re.sub(header_pattern, new_header_block, content, flags=re.DOTALL)
+                print("SUCCESS: Patched global CORS header block.")
+
+            # 2. Fix the SGU block
             new_sgu_block = """    # SGU API
     handle /sgu {
         redir /sgu/
@@ -57,13 +62,9 @@ jobs:
         reverse_proxy localhost:8022
     }"""
 
-            # Try to replace the old block if it exists
             if "# SGU API" in content:
-                # Find the existing # SGU API block until the next # or }
                 content = re.sub(r'# SGU API.*?(?=\s+#|\s+\})', new_sgu_block + "\n", content, flags=re.DOTALL)
-                print("SUCCESS: Patched SGU block via regex.")
-            else:
-                print("WARNING: # SGU API block not found in Caddyfile.")
+                print("SUCCESS: Patched SGU block.")
 
             with open(CADDYFILE, 'w') as f:
                 f.write(content)

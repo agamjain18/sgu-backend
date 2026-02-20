@@ -27,3 +27,6 @@ jobs:
             sleep 5
             pm2 status
             pm2 logs sgu-backend --lines 20 --nostream
+            echo "--- LOCALHOST TEST ---"
+            curl -i http://localhost:8022/ || true
+            curl -i http://localhost:8022/health || true

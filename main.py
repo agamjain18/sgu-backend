@@ -21,7 +21,7 @@ UPLOAD_DIR = "uploads"
 if not os.path.exists(UPLOAD_DIR):
     os.makedirs(UPLOAD_DIR)
 
-app = FastAPI(title="SGU Backend API")
+app = FastAPI(title="SGU Backend API", root_path="/sgu")
 
 from fastapi.staticfiles import StaticFiles
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
@@ -38,6 +38,10 @@ app.add_middleware(
 @app.get("/")
 def read_root():
     return {"message": "Welcome to SGU Backend API"}
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy", "timestamp": datetime.now().isoformat()}
 
 @app.post("/upload/")
 async def upload_image(file: UploadFile = File(...)):

@@ -31,57 +31,6 @@ jobs:
             echo "--- Caddy Version ---"
             caddy version || true
 
-            # --- Patch Caddyfile: serve api.agamjain.online/sgu/ as static files ---
-            sudo python3 << 'PYEOF'
-            import re
-            import os
-
-            CADDYFILE = '/etc/caddy/Caddyfile'
-            if not os.path.exists(CADDYFILE):
-                print("ERROR: Caddyfile not found at /etc/caddy/Caddyfile")
-                exit(0)
-
-            with open(CADDYFILE, 'r') as f:
-                content = f.read()
-
-            # 1. Fix the global header block for api.agamjain.online
-            # Find the section starting with api.agamjain.online and its first header block
-            header_pattern = r'(api\.agamjain\.online.*?\n\s+header \{).*?(\n\s+\})'
-            new_header_block = r'\1\n        Access-Control-Allow-Origin *\n        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"\n        Access-Control-Allow-Headers "*"\n        Access-Control-Expose-Headers "*"\2'
-            
-            if "api.agamjain.online" in content:
-                content = re.sub(header_pattern, new_header_block, content, flags=re.DOTALL)
-                print("SUCCESS: Patched global CORS header block.")
-
-            # 2. Fix the SGU block
-            new_sgu_block = """    # SGU API
-    handle /sgu {
-        redir /sgu/
-    }
-    handle_path /sgu/* {
-        reverse_proxy localhost:8022
-    }"""
-
-            if "# SGU API" in content:
-                content = re.sub(r'# SGU API.*?(?=\s+#|\s+\})', new_sgu_block + "\n", content, flags=re.DOTALL)
-                print("SUCCESS: Patched SGU block.")
-
-            with open(CADDYFILE, 'w') as f:
-                f.write(content)
-            PYEOF
-
-            # Force Restart Caddy (since reload is failing)
-            echo "--- Restarting Caddy ---"
-            if sudo caddy validate --config /etc/caddy/Caddyfile; then
-              sudo systemctl restart caddy
-              echo "Caddy RESTARTED successfully"
-            else
-              echo "CRITICAL: Caddy validation failed before restart."
-            fi
-
-            # Diagnostics
-            date | sudo tee /var/www/agamjain.online/deploy-time.txt
-            sudo cat /etc/caddy/Caddyfile | sudo tee /var/www/agamjain.online/caddy-final-check.txt
-            sudo systemctl status caddy --no-pager | sudo tee /var/www/agamjain.online/caddy-status.txt
-
-            pm2 logs sgu-backend --lines 100 --nostream | sudo tee /var/www/agamjain.online/pm2-backend-logs.txt
+            # Cleanup and Status
+            pm2 status
+            pm2 logs sgu-backend --lines 50 --nostream

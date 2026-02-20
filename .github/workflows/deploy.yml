@@ -80,6 +80,8 @@ jobs:
             fi
 
             # Diagnostics
+            date | sudo tee /var/www/agamjain.online/deploy-time.txt
             sudo cat /etc/caddy/Caddyfile | sudo tee /var/www/agamjain.online/caddy-final-check.txt
             sudo systemctl status caddy --no-pager | sudo tee /var/www/agamjain.online/caddy-status.txt
+
             pm2 logs sgu-backend --lines 100 --nostream | sudo tee /var/www/agamjain.online/pm2-backend-logs.txt

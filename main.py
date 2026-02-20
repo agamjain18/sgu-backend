@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
 from typing import List
 
@@ -27,6 +28,25 @@ print("--- SGU Backend API is starting up on port 8022 ---")
 from fastapi.staticfiles import StaticFiles
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
 
+# Serve the built React frontend.
+# Caddy strips /sgu before proxying here, so FastAPI sees plain paths:
+#   api.agamjain.online/sgu/          -> FastAPI GET /            -> index.html
+#   api.agamjain.online/sgu/assets/x  -> FastAPI GET /assets/x   -> static asset
+#   api.agamjain.online/sgu/products  -> FastAPI GET /products/   -> index.html (SPA)
+SGU_DIST_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static", "sgu")
+_sgu_assets_dir = os.path.join(SGU_DIST_DIR, "assets")
+if os.path.isdir(_sgu_assets_dir):
+    app.mount("/assets", StaticFiles(directory=_sgu_assets_dir), name="sgu_assets")
+
+@app.get("/", include_in_schema=False)
+def serve_root():
+    """Serve the SGU website index.html at the root (after Caddy strips /sgu)."""
+    index = os.path.join(SGU_DIST_DIR, "index.html")
+    if os.path.isfile(index):
+        return FileResponse(index, media_type="text/html")
+    return {"message": "Welcome to SGU Backend API", "status": "Online", "version": "1.1.0", "documentation": "/docs"}
+
+
 # Enable CORS
 app.add_middleware(
     CORSMiddleware,
@@ -36,14 +56,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-def read_root():
-    return {
-        "message": "Welcome to SGU Backend API",
-        "status": "Online",
-        "version": "1.1.0",
-        "documentation": "/docs"
-    }
 
 @app.get("/health")
 def health_check():
@@ -177,3 +189,18 @@ def update_setting(setting: schemas.SettingCreate, db: Session = Depends(get_db)
     db.commit()
     db.refresh(db_setting)
     return db_setting
+
+# SPA catch-all: serve index.html for any unmatched GET path
+# This supports React Router navigation (e.g. /products, /about, /contact)
+# API routes above take priority since FastAPI routes are matched first.
+@app.get("/{full_path:path}", include_in_schema=False)
+def serve_spa(full_path: str):
+    # Serve exact files if they exist (logo.png, etc.)
+    file_path = os.path.join(SGU_DIST_DIR, full_path)
+    if os.path.isfile(file_path):
+        return FileResponse(file_path)
+    # Fallback to index.html for SPA routing
+    index = os.path.join(SGU_DIST_DIR, "index.html")
+    if os.path.isfile(index):
+        return FileResponse(index, media_type="text/html")
+    raise HTTPException(status_code=404, detail="Not found")

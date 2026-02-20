@@ -36,26 +36,9 @@ jobs:
                 content = f.read()
 
             # Use regex to replace the SGU API block on api.agamjain.online
-            # We target the exact block present in the file (confirmed from dump):
-            #     # SGU API
-            #     handle /sgu {
-            #         redir /sgu/
-            #     }
-            #     handle /sgu/* {
-            #         uri strip_prefix /sgu
-            #         reverse_proxy localhost:8022
-            #     }
-            old_pattern = r'(    # SGU API\n    handle /sgu \{\n        redir /sgu/\n    \}\n    handle /sgu/\* \{\n        uri strip_prefix /sgu\n        reverse_proxy localhost:8022\n    \})'
+            old_pattern = r'(    # SGU API\n    handle /sgu \{\n        redir /sgu/\n    \}\n    handle_path /sgu/\* \{\n        reverse_proxy localhost:8022\n    \})'
 
-            new_block = """    # SGU Website (static files on API subdomain - same folder as main domain)
-    handle /sgu {
-        redir /sgu/
-    }
-    handle_path /sgu/* {
-        root * /var/www/agamjain.online/sgu/site
-        file_server
-        try_files {path} {path}/ /index.html
-    }"""
+            new_block = "    # SGU Website\n    handle /sgu {\n        redir /sgu/\n    }\n    handle_path /sgu/* {\n        reverse_proxy localhost:8022\n    }"
 
             new_content, count = re.subn(old_pattern, new_block, content)
             if count > 0:
@@ -63,18 +46,7 @@ jobs:
                     f.write(new_content)
                 print(f"SUCCESS: Replaced {count} block(s). Caddyfile updated.")
             else:
-                print("WARNING: Pattern not matched. Trying fallback string replace...")
-                old_str = "    # SGU API\n    handle /sgu {\n        redir /sgu/\n    }\n    handle /sgu/* {\n        uri strip_prefix /sgu\n        reverse_proxy localhost:8022\n    }"
-                if old_str in content:
-                    new_content = content.replace(old_str, new_block)
-                    with open(CADDYFILE, 'w') as f:
-                        f.write(new_content)
-                    print("SUCCESS: Fallback string replace worked.")
-                else:
-                    print("ERROR: Could not find SGU API block. Current api.agamjain.online section:")
-                    start = content.find('# 3. API Subdomain')
-                    end = content.find('\n# 4.', start)
-                    print(repr(content[start:end]))
+                print("WARNING: Pattern not matched. Caddyfile might already be correct.")
             PYEOF
 
             # Validate and reload Caddy

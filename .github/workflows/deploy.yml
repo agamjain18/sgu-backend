@@ -1,0 +1,24 @@
+name: Backend CI/CD
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/sgu-backend || git clone https://github.com/agamjain18/sgu-backend.git ~/sgu-backend
+            cd ~/sgu-backend
+            git pull origin master
+            python3 -m venv venv
+            source venv/bin/activate
+            pip install -r requirements.txt
+            pm2 restart sgu-backend || pm2 start ecosystem.config.js

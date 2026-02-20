@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
 from typing import List
 
@@ -26,6 +27,28 @@ print("--- SGU Backend API is starting up on port 8022 ---")
 
 from fastapi.staticfiles import StaticFiles
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
+
+# Serve the built frontend (React/Vite) from the /sgu subpath
+SGU_DIST_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static", "sgu")
+if os.path.exists(SGU_DIST_DIR):
+    app.mount("/sgu/assets", StaticFiles(directory=os.path.join(SGU_DIST_DIR, "assets")), name="sgu_assets")
+
+@app.get("/sgu")
+@app.get("/sgu/")
+def serve_sgu_root():
+    index_file = os.path.join(SGU_DIST_DIR, "index.html")
+    return FileResponse(index_file, media_type="text/html")
+
+@app.get("/sgu/{full_path:path}")
+def serve_sgu_spa(full_path: str):
+    """Catch-all route to support React Router client-side navigation under /sgu."""
+    # Check if requesting the logo or other public root-level assets
+    asset_path = os.path.join(SGU_DIST_DIR, full_path)
+    if os.path.exists(asset_path) and os.path.isfile(asset_path):
+        return FileResponse(asset_path)
+    # Otherwise serve index.html for SPA routing
+    index_file = os.path.join(SGU_DIST_DIR, "index.html")
+    return FileResponse(index_file, media_type="text/html")
 
 # Enable CORS
 app.add_middleware(

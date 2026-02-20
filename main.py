@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List
@@ -21,7 +21,7 @@ UPLOAD_DIR = "uploads"
 if not os.path.exists(UPLOAD_DIR):
     os.makedirs(UPLOAD_DIR)
 
-app = FastAPI(title="SGU Backend API", root_path="/sgu")
+app = FastAPI(title="SGU Backend API")
 
 from fastapi.staticfiles import StaticFiles
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")

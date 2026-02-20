@@ -69,19 +69,16 @@ jobs:
                 f.write(content)
             PYEOF
 
-            # Validate and reload Caddy
-            echo "--- Validating Caddyfile ---"
-            sudo caddy validate --config /etc/caddy/Caddyfile > ~/caddy_validation.log 2>&1 || true
-            sudo cat ~/caddy_validation.log | sudo tee /var/www/agamjain.online/caddy-validation-error.txt
-
+            # Force Restart Caddy (since reload is failing)
+            echo "--- Restarting Caddy ---"
             if sudo caddy validate --config /etc/caddy/Caddyfile; then
-              sudo systemctl reload caddy
-              echo "Caddy reloaded successfully"
+              sudo systemctl restart caddy
+              echo "Caddy RESTARTED successfully"
             else
-              echo "CRITICAL: Caddy validation failed. Check /var/www/agamjain.online/caddy-validation-error.txt"
+              echo "CRITICAL: Caddy validation failed before restart."
             fi
 
             # Diagnostics
-            sudo cat /etc/caddy/Caddyfile | sudo tee /var/www/agamjain.online/caddyfile-dump.txt
+            sudo cat /etc/caddy/Caddyfile | sudo tee /var/www/agamjain.online/caddy-final-check.txt
             sudo systemctl status caddy --no-pager | sudo tee /var/www/agamjain.online/caddy-status.txt
             pm2 logs sgu-backend --lines 100 --nostream | sudo tee /var/www/agamjain.online/pm2-backend-logs.txt

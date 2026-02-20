@@ -14,6 +14,9 @@ from datetime import datetime
 import auth
 import re
 from fastapi.security import OAuth2PasswordRequestForm
+from fastapi.responses import JSONResponse
+from fastapi import Request
+
 
 def slugify(text: str) -> str:
     # Lowercase, replace spaces with hyphens, remove special characters
@@ -24,6 +27,38 @@ def slugify(text: str) -> str:
 
 # Create the database tables
 models.Base.metadata.create_all(bind=engine)
+
+# Auto-migrate: Add missing columns if they don't exist
+def migrate_db():
+    from sqlalchemy import inspect, text
+    inspector = inspect(engine)
+    columns = [col['name'] for col in inspector.get_columns('products')]
+    
+    with engine.connect() as conn:
+        if 'is_bestseller' not in columns:
+            print("Adding is_bestseller column...")
+            conn.execute(text("ALTER TABLE products ADD COLUMN is_bestseller BOOLEAN DEFAULT 0"))
+            conn.commit()
+        if 'slug' not in columns:
+            print("Adding slug column...")
+            conn.execute(text("ALTER TABLE products ADD COLUMN slug VARCHAR"))
+            conn.commit()
+            # Generate slugs for existing products
+            from sqlalchemy.orm import Session
+            db = SessionLocal()
+            products = db.query(models.Product).all()
+            for p in products:
+                if not p.slug:
+                    p.slug = slugify(p.name)
+            db.commit()
+            db.close()
+    print("Database migration check complete.")
+
+migrate_db()
+
+import logging
+logging.basicConfig(filename='api_errors.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 UPLOAD_DIR = "uploads"
 if not os.path.exists(UPLOAD_DIR):
@@ -57,6 +92,19 @@ def read_root():
 @app.get("/health")
 def health_check():
     return {"status": "healthy", "timestamp": datetime.now().isoformat()}
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    logging.error(f"Global exception: {str(exc)}")
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal Server Error", "message": str(exc)},
+        headers={
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Headers": "*",
+        }
+    )
 
 @app.post("/upload/")
 async def upload_image(file: UploadFile = File(...)):
@@ -104,8 +152,12 @@ def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db)
 
 @app.get("/products/", response_model=List[schemas.Product])
 def read_products(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    products = db.query(models.Product).offset(skip).limit(limit).all()
-    return products
+    try:
+        products = db.query(models.Product).offset(skip).limit(limit).all()
+        return products
+    except Exception as e:
+        logging.error(f"Error in read_products: {str(e)}")
+        raise e
 
 @app.get("/products/{product_id}", response_model=schemas.Product)
 def read_product(product_id: int, db: Session = Depends(get_db)):

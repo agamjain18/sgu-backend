@@ -19,6 +19,17 @@ class Product(Base):
     status = Column(String)
     image = Column(Text)
     is_bestseller = Column(Boolean, default=False)
+
+class IndustryProduct(Base):
+    __tablename__ = "industry_products"
+
+    id = Column(Integer, primary_key=True, index=True)
+    industry = Column(String, index=True) # e.g., bakery, dairy
+    category = Column(String, index=True) # e.g., Protein, Fiber
+    name = Column(String)
+    slug = Column(String)
+    image = Column(Text)
+    product_id_str = Column(String) # For frontend ID consistency
 class Inquiry(Base):
     __tablename__ = "inquiries"
 

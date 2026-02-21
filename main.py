@@ -8,6 +8,7 @@ import schemas
 from database import SessionLocal, engine, get_db
 import os
 import shutil
+import json
 from fastapi import File, UploadFile
 import uuid
 from datetime import datetime
@@ -55,6 +56,16 @@ def migrate_db():
     print("Database migration check complete.")
 
 migrate_db()
+
+def migrate_industry_db():
+    from sqlalchemy import inspect
+    inspector = inspect(engine)
+    if 'industry_products' not in inspector.get_table_names():
+        print("Creating industry_products table...")
+        models.IndustryProduct.__table__.create(engine)
+    print("Industry database migration check complete.")
+
+migrate_industry_db()
 
 import logging
 logging.basicConfig(filename='api_errors.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -177,6 +188,45 @@ def read_product_by_slug(slug: str, db: Session = Depends(get_db)):
     if db_product is None:
         raise HTTPException(status_code=404, detail="Product not found")
     return db_product
+
+@app.get("/industry-products/", response_model=List[schemas.IndustryProduct])
+def read_industry_products(industry: str = None, db: Session = Depends(get_db)):
+    query = db.query(models.IndustryProduct)
+    if industry:
+        query = query.filter(models.IndustryProduct.industry == industry)
+    return query.all()
+
+@app.post("/industry-products/sync")
+def sync_industry_products(db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_user)):
+    try:
+        # Clear existing
+        db.query(models.IndustryProduct).delete()
+        
+        # Load the latest JSON
+        json_path = os.path.join(os.path.dirname(__file__), "new_industry_data.json")
+        if not os.path.exists(json_path):
+             return {"message": "Data file not found"}
+        
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        for ind_slug, ind_obj in data.items():
+            for section in ind_obj.get('sections', []):
+                cat_name = section['title']
+                for item in section['items']:
+                    db.add(models.IndustryProduct(
+                        industry=ind_slug,
+                        category=cat_name,
+                        name=item['name'],
+                        slug=item['slug'],
+                        image=item['img'],
+                        product_id_str=item['id']
+                    ))
+        db.commit()
+        return {"message": "Industry products synced successfully"}
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.put("/products/{product_id}", response_model=schemas.Product)
 def update_product(product_id: int, product: schemas.ProductCreate, db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_user)):

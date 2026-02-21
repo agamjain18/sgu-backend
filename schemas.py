@@ -26,6 +26,23 @@ class Product(ProductBase):
     class Config:
         from_attributes = True
 
+class IndustryProductBase(BaseModel):
+    industry: str
+    category: str
+    name: str
+    slug: str
+    image: str
+    product_id_str: str
+
+class IndustryProductCreate(IndustryProductBase):
+    pass
+
+class IndustryProduct(IndustryProductBase):
+    id: int
+
+    class Config:
+        from_attributes = True
+
 class CountryBase(BaseModel):
     name: str
 

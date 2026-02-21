@@ -28,11 +28,11 @@ class Product(ProductBase):
 
 class IndustryProductBase(BaseModel):
     industry: str
-    category: str
+    category: Optional[str] = ""
     name: str
-    slug: str
-    image: str
-    product_id_str: str
+    slug: Optional[str] = ""
+    image: Optional[str] = ""
+    product_id_str: Optional[str] = ""
 
 class IndustryProductCreate(IndustryProductBase):
     pass
@@ -105,3 +105,22 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     username: Optional[str] = None
+
+class JobPositionBase(BaseModel):
+    title: str
+    department: Optional[str] = None
+    location: Optional[str] = "Mumbai, India"
+    type: Optional[str] = "Full-Time"
+    description: Optional[str] = None
+    requirements: Optional[str] = None
+    is_active: Optional[bool] = True
+    created_at: Optional[str] = None
+
+class JobPositionCreate(JobPositionBase):
+    pass
+
+class JobPosition(JobPositionBase):
+    id: int
+
+    class Config:
+        from_attributes = True

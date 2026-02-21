@@ -62,3 +62,16 @@ class User(Base):
     username = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
     hashed_password = Column(String)
+
+class JobPosition(Base):
+    __tablename__ = "job_positions"
+
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, index=True)
+    department = Column(String)
+    location = Column(String, default="Mumbai, India")
+    type = Column(String, default="Full-Time")  # Full-Time, Part-Time, Remote, Contract
+    description = Column(Text)
+    requirements = Column(Text)
+    is_active = Column(Boolean, default=True)
+    created_at = Column(String)

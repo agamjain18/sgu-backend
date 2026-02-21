@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 from sqlalchemy.orm import Session
 from typing import List
 
@@ -89,6 +90,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 @app.get("/")
 def read_root():
@@ -196,6 +199,34 @@ def read_industry_products(industry: str = None, db: Session = Depends(get_db)):
         query = query.filter(models.IndustryProduct.industry == industry)
     return query.all()
 
+@app.post("/industry-products/", response_model=schemas.IndustryProduct)
+def create_industry_product(product: schemas.IndustryProductCreate, db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_user)):
+    import re
+    def slugify(text: str) -> str:
+        text = text.lower()
+        text = re.sub(r'[^\w\s-]', '', text)
+        text = re.sub(r'[\s_-]+', '-', text)
+        return text.strip('-')
+    product_dict = product.dict()
+    if not product_dict.get('slug'):
+        product_dict['slug'] = slugify(product_dict.get('name', ''))
+    if not product_dict.get('product_id_str'):
+        product_dict['product_id_str'] = f"{product_dict.get('industry','')}-{slugify(product_dict.get('category',''))}-{product_dict.get('slug','')}"
+    db_product = models.IndustryProduct(**product_dict)
+    db.add(db_product)
+    db.commit()
+    db.refresh(db_product)
+    return db_product
+
+@app.delete("/industry-products/{product_id}")
+def delete_industry_product(product_id: int, db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_user)):
+    db_product = db.query(models.IndustryProduct).filter(models.IndustryProduct.id == product_id).first()
+    if db_product is None:
+        raise HTTPException(status_code=404, detail="Industry product not found")
+    db.delete(db_product)
+    db.commit()
+    return {"message": "Industry product deleted successfully"}
+
 @app.post("/industry-products/sync")
 def sync_industry_products(db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_user)):
     try:
@@ -227,6 +258,23 @@ def sync_industry_products(db: Session = Depends(get_db), current_user: models.U
     except Exception as e:
         db.rollback()
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/industry-products/bulk", response_model=List[schemas.IndustryProduct])
+def bulk_create_industry_products(products: List[schemas.IndustryProductCreate], db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_user)):
+    results = []
+    for product in products:
+        product_dict = product.dict()
+        if not product_dict.get('slug'):
+            product_dict['slug'] = slugify(product_dict.get('name', ''))
+        if not product_dict.get('product_id_str'):
+            product_dict['product_id_str'] = f"{product_dict.get('industry','')}-{slugify(product_dict.get('category',''))}-{product_dict.get('slug','')}"
+        db_product = models.IndustryProduct(**product_dict)
+        db.add(db_product)
+        results.append(db_product)
+    db.commit()
+    for r in results:
+        db.refresh(r)
+    return results
 
 @app.put("/products/{product_id}", response_model=schemas.Product)
 def update_product(product_id: int, product: schemas.ProductCreate, db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_user)):
@@ -308,3 +356,43 @@ def update_setting(setting: schemas.SettingCreate, db: Session = Depends(get_db)
     db.commit()
     db.refresh(db_setting)
     return db_setting
+
+# JOB POSITIONS
+@app.get("/job-positions/", response_model=List[schemas.JobPosition])
+def read_job_positions(active_only: bool = False, db: Session = Depends(get_db)):
+    query = db.query(models.JobPosition)
+    if active_only:
+        query = query.filter(models.JobPosition.is_active == True)
+    return query.order_by(models.JobPosition.id.desc()).all()
+
+@app.post("/job-positions/", response_model=schemas.JobPosition)
+def create_job_position(position: schemas.JobPositionCreate, db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_user)):
+    from datetime import datetime as dt
+    position_dict = position.dict()
+    if not position_dict.get('created_at'):
+        position_dict['created_at'] = dt.now().strftime("%Y-%m-%d")
+    db_position = models.JobPosition(**position_dict)
+    db.add(db_position)
+    db.commit()
+    db.refresh(db_position)
+    return db_position
+
+@app.put("/job-positions/{position_id}", response_model=schemas.JobPosition)
+def update_job_position(position_id: int, position: schemas.JobPositionCreate, db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_user)):
+    db_position = db.query(models.JobPosition).filter(models.JobPosition.id == position_id).first()
+    if db_position is None:
+        raise HTTPException(status_code=404, detail="Job position not found")
+    for key, value in position.dict().items():
+        setattr(db_position, key, value)
+    db.commit()
+    db.refresh(db_position)
+    return db_position
+
+@app.delete("/job-positions/{position_id}")
+def delete_job_position(position_id: int, db: Session = Depends(get_db), current_user: models.User = Depends(auth.get_current_user)):
+    db_position = db.query(models.JobPosition).filter(models.JobPosition.id == position_id).first()
+    if db_position is None:
+        raise HTTPException(status_code=404, detail="Job position not found")
+    db.delete(db_position)
+    db.commit()
+    return {"message": "Job position deleted successfully"}

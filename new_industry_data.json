@@ -1,59 +1,211 @@
 {
   "bakery": {
-    "title": "Bakery & Confectionery",
-    "description": "High performance functional food ingredients for breads, cakes, cookies, and pastries.",
+    "title": "Bakery",
+    "description": "High performance functional food ingredients for breads, cakes, cookies and pastries.",
     "heroImg": "https://images.unsplash.com/photo-1517433627386-22442db5610e?q=80&w=1600&auto=format&fit=crop",
     "sections": [
+      {
+        "title": "Preservative",
+        "items": [
+          {
+            "id": "bakery-preservative-calcium-propionate",
+            "name": "Calcium Propionate",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "calcium-propionate"
+          },
+          {
+            "id": "bakery-preservative-sodium-propionate",
+            "name": "Sodium Propionate",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "sodium-propionate"
+          },
+          {
+            "id": "bakery-preservative-potassium-sorbate",
+            "name": "Potassium Sorbate",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "potassium-sorbate"
+          },
+          {
+            "id": "bakery-preservative-sorbic-acid",
+            "name": "Sorbic Acid",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "sorbic-acid"
+          },
+          {
+            "id": "bakery-preservative-sodium-benzoate",
+            "name": "Sodium Benzoate",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "sodium-benzoate"
+          },
+          {
+            "id": "bakery-preservative-pgms",
+            "name": "PGMS",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "pgms"
+          },
+          {
+            "id": "bakery-preservative-datem",
+            "name": "Datem",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "datem"
+          }
+        ]
+      },
+      {
+        "title": "Preservative / Emulsifier",
+        "items": [
+          {
+            "id": "bakery-preservative-emulsifier-dmg",
+            "name": "DMG",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "dmg"
+          }
+        ]
+      },
+      {
+        "title": "Sweetener & Polyol",
+        "items": [
+          {
+            "id": "bakery-sweetener-polyol-fructose",
+            "name": "Fructose",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "fructose"
+          },
+          {
+            "id": "bakery-sweetener-polyol-monk-fruit-extract",
+            "name": "Monk Fruit Extract",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "monk-fruit-extract"
+          },
+          {
+            "id": "bakery-sweetener-polyol-maltitol",
+            "name": "Maltitol",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "maltitol"
+          },
+          {
+            "id": "bakery-sweetener-polyol-acesulfame-k",
+            "name": "Acesulfame K",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "acesulfame-k"
+          },
+          {
+            "id": "bakery-sweetener-polyol-sucralose",
+            "name": "Sucralose",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "sucralose"
+          },
+          {
+            "id": "bakery-sweetener-polyol-stevia",
+            "name": "Stevia",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "stevia"
+          },
+          {
+            "id": "bakery-sweetener-polyol-aspartame",
+            "name": "Aspartame",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "aspartame"
+          },
+          {
+            "id": "bakery-sweetener-polyol-neotame",
+            "name": "Neotame",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "neotame"
+          },
+          {
+            "id": "bakery-sweetener-polyol-xylitol",
+            "name": "Xylitol",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "xylitol"
+          }
+        ]
+      },
       {
         "title": "Protein",
         "items": [
           {
-            "id": "bakery-protein-vital-wheat-gluten-vwg",
-            "name": "Vital Wheat Gluten (VWG)",
-            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
-            "slug": "vital-wheat-gluten-vwg"
-          },
-          {
-            "id": "bakery-protein-sweet-whey-powder",
-            "name": "Sweet Whey Powder",
-            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
-            "slug": "sweet-whey-powder"
-          },
-          {
-            "id": "bakery-protein-soya-protein-isolate",
-            "name": "Soya Protein Isolate",
-            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
-            "slug": "soya-protein-isolate"
+            "id": "bakery-protein-soya-protein-isolate-90",
+            "name": "Soya Protein Isolate 90 %",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-isolate-90"
           },
           {
             "id": "bakery-protein-soya-protein-concentrate",
             "name": "Soya Protein Concentrate",
-            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
             "slug": "soya-protein-concentrate"
           },
           {
-            "id": "bakery-protein-functional-wpc",
-            "name": "Functional WPC",
+            "id": "bakery-protein-functional-whey-protein-concentrate-80",
+            "name": "Functional Whey Protein Concentrate 80 %",
             "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
-            "slug": "functional-wpc"
+            "slug": "functional-whey-protein-concentrate-80"
           },
           {
-            "id": "bakery-protein-instant-wpc",
-            "name": "Instant WPC",
-            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
-            "slug": "instant-wpc"
+            "id": "bakery-protein-instant-whey-protein-concentrate-80",
+            "name": "Instant Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "instant-whey-protein-concentrate-80"
           },
           {
-            "id": "bakery-protein-whey-protein-concentrate",
-            "name": "Whey Protein Concentrate",
-            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
-            "slug": "whey-protein-concentrate"
+            "id": "bakery-protein-whey-protein-isolate",
+            "name": "Whey Protein Isolate",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "whey-protein-isolate"
           },
           {
             "id": "bakery-protein-pea-protein-isolate",
             "name": "Pea Protein Isolate",
-            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
             "slug": "pea-protein-isolate"
+          },
+          {
+            "id": "bakery-protein-vital-wheat-gluten-vwg",
+            "name": "Vital Wheat Gluten (VWG)",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "vital-wheat-gluten-vwg"
+          },
+          {
+            "id": "bakery-protein-sweet-whey-powder-swp",
+            "name": "Sweet Whey Powder (SWP)",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "sweet-whey-powder-swp"
+          }
+        ]
+      },
+      {
+        "title": "Gums/Thickening Agent",
+        "items": [
+          {
+            "id": "bakery-gumsthickening-agent-xanthan-gum",
+            "name": "Xanthan Gum",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "xanthan-gum"
+          },
+          {
+            "id": "bakery-gumsthickening-agent-guar-gum",
+            "name": "Guar Gum",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "guar-gum"
+          },
+          {
+            "id": "bakery-gumsthickening-agent-carrageenan-dairy-grade",
+            "name": "Carrageenan (Dairy Grade)",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "carrageenan-dairy-grade"
+          },
+          {
+            "id": "bakery-gumsthickening-agent-pectin-jam-jelly-grade",
+            "name": "Pectin (Jam / Jelly Grade)",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "pectin-jam-jelly-grade"
+          },
+          {
+            "id": "bakery-gumsthickening-agent-type-ii-collagen",
+            "name": "Type II Collagen",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "type-ii-collagen"
           }
         ]
       },
@@ -63,7 +215,7 @@
           {
             "id": "bakery-cocoa-natural-cocoa-powder",
             "name": "Natural Cocoa Powder",
-            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
             "slug": "natural-cocoa-powder"
           },
           {
@@ -75,7 +227,7 @@
           {
             "id": "bakery-cocoa-dark-brown-cocoa",
             "name": "Dark Brown Cocoa",
-            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
             "slug": "dark-brown-cocoa"
           },
           {
@@ -85,10 +237,10 @@
             "slug": "regular-brown-cocoa"
           },
           {
-            "id": "bakery-cocoa-alkalized-cocoa",
-            "name": "Alkalized Cocoa",
-            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
-            "slug": "alkalized-cocoa"
+            "id": "bakery-cocoa-alkalized-cocoa-powder",
+            "name": "Alkalized Cocoa Powder",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "alkalized-cocoa-powder"
           },
           {
             "id": "bakery-cocoa-dm-cocoa",
@@ -97,163 +249,257 @@
             "slug": "dm-cocoa"
           }
         ]
-      },
+      }
+    ]
+  },
+  "confectionery": {
+    "title": "Confectionery",
+    "description": "Solutions for candies, chocolates, coating, gum and sweet applications.",
+    "heroImg": "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?q=80&w=1600&auto=format&fit=crop",
+    "sections": [
       {
-        "title": "Preservatives",
+        "title": "Preservative",
         "items": [
           {
-            "id": "bakery-preservatives-calcium-propionate",
+            "id": "confectionery-preservative-calcium-propionate",
             "name": "Calcium Propionate",
-            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
             "slug": "calcium-propionate"
           },
           {
-            "id": "bakery-preservatives-sodium-propionate",
+            "id": "confectionery-preservative-sodium-propionate",
             "name": "Sodium Propionate",
-            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
             "slug": "sodium-propionate"
           },
           {
-            "id": "bakery-preservatives-potassium-sorbate",
+            "id": "confectionery-preservative-potassium-sorbate",
             "name": "Potassium Sorbate",
-            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
             "slug": "potassium-sorbate"
           },
           {
-            "id": "bakery-preservatives-sorbic-acid",
+            "id": "confectionery-preservative-sorbic-acid",
             "name": "Sorbic Acid",
-            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
             "slug": "sorbic-acid"
           },
           {
-            "id": "bakery-preservatives-sodium-benzoate",
+            "id": "confectionery-preservative-sodium-benzoate",
             "name": "Sodium Benzoate",
-            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
             "slug": "sodium-benzoate"
           },
           {
-            "id": "bakery-preservatives-pgms",
+            "id": "confectionery-preservative-pgms",
             "name": "PGMS",
-            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
             "slug": "pgms"
           },
           {
-            "id": "bakery-preservatives-datem",
-            "name": "DATEM",
-            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "id": "confectionery-preservative-datem",
+            "name": "Datem",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
             "slug": "datem"
-          },
+          }
+        ]
+      },
+      {
+        "title": "Preservative / Emulsifier",
+        "items": [
           {
-            "id": "bakery-preservatives-dmg",
+            "id": "confectionery-preservative-emulsifier-dmg",
             "name": "DMG",
-            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
             "slug": "dmg"
           }
         ]
       },
       {
-        "title": "Sweetener",
+        "title": "Sweetener & Polyol",
         "items": [
           {
-            "id": "bakery-sweetener-fructose",
+            "id": "confectionery-sweetener-polyol-fructose",
             "name": "Fructose",
-            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
             "slug": "fructose"
           },
           {
-            "id": "bakery-sweetener-monk-fruit",
-            "name": "Monk Fruit",
-            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
-            "slug": "monk-fruit"
+            "id": "confectionery-sweetener-polyol-monk-fruit-extract",
+            "name": "Monk Fruit Extract",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "monk-fruit-extract"
           },
           {
-            "id": "bakery-sweetener-maltitol",
+            "id": "confectionery-sweetener-polyol-maltitol",
             "name": "Maltitol",
-            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
             "slug": "maltitol"
           },
           {
-            "id": "bakery-sweetener-acesulfame-k",
+            "id": "confectionery-sweetener-polyol-acesulfame-k",
             "name": "Acesulfame K",
-            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
             "slug": "acesulfame-k"
           },
           {
-            "id": "bakery-sweetener-sucralose",
+            "id": "confectionery-sweetener-polyol-sucralose",
             "name": "Sucralose",
-            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
             "slug": "sucralose"
           },
           {
-            "id": "bakery-sweetener-stevia",
+            "id": "confectionery-sweetener-polyol-stevia",
             "name": "Stevia",
-            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
             "slug": "stevia"
           },
           {
-            "id": "bakery-sweetener-aspartame",
+            "id": "confectionery-sweetener-polyol-aspartame",
             "name": "Aspartame",
             "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
             "slug": "aspartame"
           },
           {
-            "id": "bakery-sweetener-neotame",
+            "id": "confectionery-sweetener-polyol-neotame",
             "name": "Neotame",
-            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
             "slug": "neotame"
           },
           {
-            "id": "bakery-sweetener-xylitol",
+            "id": "confectionery-sweetener-polyol-xylitol",
             "name": "Xylitol",
-            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
             "slug": "xylitol"
           }
         ]
       },
       {
-        "title": "Gums / Thickeners",
+        "title": "Protein",
         "items": [
           {
-            "id": "bakery-gums-thickeners-xanthan-gum",
-            "name": "Xanthan Gum",
+            "id": "confectionery-protein-soya-protein-isolate-90",
+            "name": "Soya Protein Isolate 90 %",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-isolate-90"
+          },
+          {
+            "id": "confectionery-protein-soya-protein-concentrate",
+            "name": "Soya Protein Concentrate",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-concentrate"
+          },
+          {
+            "id": "confectionery-protein-functional-whey-protein-concentrate-80",
+            "name": "Functional Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "functional-whey-protein-concentrate-80"
+          },
+          {
+            "id": "confectionery-protein-instant-whey-protein-concentrate-80",
+            "name": "Instant Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "instant-whey-protein-concentrate-80"
+          },
+          {
+            "id": "confectionery-protein-whey-protein-isolate",
+            "name": "Whey Protein Isolate",
             "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "whey-protein-isolate"
+          },
+          {
+            "id": "confectionery-protein-pea-protein-isolate",
+            "name": "Pea Protein Isolate",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "pea-protein-isolate"
+          },
+          {
+            "id": "confectionery-protein-vital-wheat-gluten-vwg",
+            "name": "Vital Wheat Gluten (VWG)",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "vital-wheat-gluten-vwg"
+          },
+          {
+            "id": "confectionery-protein-sweet-whey-powder-swp",
+            "name": "Sweet Whey Powder (SWP)",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "sweet-whey-powder-swp"
+          }
+        ]
+      },
+      {
+        "title": "Gums/Thickening Agent",
+        "items": [
+          {
+            "id": "confectionery-gumsthickening-agent-xanthan-gum",
+            "name": "Xanthan Gum",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
             "slug": "xanthan-gum"
           },
           {
-            "id": "bakery-gums-thickeners-guar-gum",
+            "id": "confectionery-gumsthickening-agent-guar-gum",
             "name": "Guar Gum",
-            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
             "slug": "guar-gum"
           },
           {
-            "id": "bakery-gums-thickeners-carrageenan",
-            "name": "Carrageenan",
-            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
-            "slug": "carrageenan"
-          },
-          {
-            "id": "bakery-gums-thickeners-pectin-jam",
-            "name": "Pectin Jam",
-            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
-            "slug": "pectin-jam"
-          },
-          {
-            "id": "bakery-gums-thickeners-pectin-jelly",
-            "name": "Pectin Jelly",
+            "id": "confectionery-gumsthickening-agent-carrageenan-dairy-grade",
+            "name": "Carrageenan (Dairy Grade)",
             "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
-            "slug": "pectin-jelly"
+            "slug": "carrageenan-dairy-grade"
           },
           {
-            "id": "bakery-gums-thickeners-type-ii-collagen",
+            "id": "confectionery-gumsthickening-agent-pectin-jam-jelly-grade",
+            "name": "Pectin (Jam / Jelly Grade)",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "pectin-jam-jelly-grade"
+          },
+          {
+            "id": "confectionery-gumsthickening-agent-type-ii-collagen",
             "name": "Type II Collagen",
-            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
             "slug": "type-ii-collagen"
+          }
+        ]
+      },
+      {
+        "title": "Cocoa",
+        "items": [
+          {
+            "id": "confectionery-cocoa-natural-cocoa-powder",
+            "name": "Natural Cocoa Powder",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "natural-cocoa-powder"
           },
           {
-            "id": "bakery-gums-thickeners-gum-acacia",
-            "name": "Gum Acacia",
-            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
-            "slug": "gum-acacia"
+            "id": "confectionery-cocoa-light-brown-cocoa",
+            "name": "Light Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "light-brown-cocoa"
+          },
+          {
+            "id": "confectionery-cocoa-dark-brown-cocoa",
+            "name": "Dark Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "dark-brown-cocoa"
+          },
+          {
+            "id": "confectionery-cocoa-regular-brown-cocoa",
+            "name": "Regular Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "regular-brown-cocoa"
+          },
+          {
+            "id": "confectionery-cocoa-alkalized-cocoa-powder",
+            "name": "Alkalized Cocoa Powder",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "alkalized-cocoa-powder"
+          },
+          {
+            "id": "confectionery-cocoa-dm-cocoa",
+            "name": "DM Cocoa",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "dm-cocoa"
           }
         ]
       },
@@ -261,326 +507,137 @@
         "title": "Emulsifier",
         "items": [
           {
-            "id": "bakery-emulsifier-non-gmo-soya-lecithin",
-            "name": "Non GMO Soya Lecithin",
-            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
-            "slug": "non-gmo-soya-lecithin"
-          },
-          {
-            "id": "bakery-emulsifier-non-gmo-soya-lecithin-liquid",
-            "name": "Non GMO Soya Lecithin Liquid",
-            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
-            "slug": "non-gmo-soya-lecithin-liquid"
-          },
-          {
-            "id": "bakery-emulsifier-non-gmo-soya-lecithin-powder",
-            "name": "Non GMO Soya Lecithin Powder",
+            "id": "confectionery-emulsifier-non-gmo-soya-lecithin-powderliquid",
+            "name": "Non GMO Soya Lecithin (Powder/Liquid)",
             "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
-            "slug": "non-gmo-soya-lecithin-powder"
+            "slug": "non-gmo-soya-lecithin-powderliquid"
           },
           {
-            "id": "bakery-emulsifier-non-gmo-sunflower-lecithin",
-            "name": "Non GMO Sunflower Lecithin",
-            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
-            "slug": "non-gmo-sunflower-lecithin"
-          },
-          {
-            "id": "bakery-emulsifier-non-gmo-sunflower-lecithin-liquid",
-            "name": "Non GMO Sunflower Lecithin Liquid",
-            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
-            "slug": "non-gmo-sunflower-lecithin-liquid"
-          },
-          {
-            "id": "bakery-emulsifier-non-gmo-sunflower-lecithin-powder",
-            "name": "Non GMO Sunflower Lecithin Powder",
+            "id": "confectionery-emulsifier-non-gmo-sunflower-lecithin-powderliquid",
+            "name": "Non GMO Sunflower Lecithin (Powder/Liquid)",
             "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
-            "slug": "non-gmo-sunflower-lecithin-powder"
-          },
-          {
-            "id": "bakery-emulsifier-non-gmo-rapeseed-lecithin",
-            "name": "Non GMO Rapeseed Lecithin",
-            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
-            "slug": "non-gmo-rapeseed-lecithin"
-          },
-          {
-            "id": "bakery-emulsifier-non-gmo-rapeseed-lecithin-liquid",
-            "name": "Non GMO Rapeseed Lecithin Liquid",
-            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
-            "slug": "non-gmo-rapeseed-lecithin-liquid"
-          },
-          {
-            "id": "bakery-emulsifier-non-gmo-rapeseed-lecithin-powder",
-            "name": "Non GMO Rapeseed Lecithin Powder",
-            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
-            "slug": "non-gmo-rapeseed-lecithin-powder"
-          }
-        ]
-      },
-      {
-        "title": "Fiber",
-        "items": [
-          {
-            "id": "bakery-fiber-polydextrose",
-            "name": "Polydextrose",
-            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
-            "slug": "polydextrose"
-          },
-          {
-            "id": "bakery-fiber-soy-fiber",
-            "name": "Soy Fiber",
-            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
-            "slug": "soy-fiber"
-          },
-          {
-            "id": "bakery-fiber-oat-fiber",
-            "name": "Oat Fiber",
-            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
-            "slug": "oat-fiber"
-          },
-          {
-            "id": "bakery-fiber-wheat-fiber",
-            "name": "Wheat Fiber",
-            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
-            "slug": "wheat-fiber"
-          }
-        ]
-      },
-      {
-        "title": "Amino Acid",
-        "items": [
-          {
-            "id": "bakery-amino-acid-bcaa-211",
-            "name": "BCAA 2:1:1",
-            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
-            "slug": "bcaa-211"
-          },
-          {
-            "id": "bakery-amino-acid-beta-alanine",
-            "name": "Beta Alanine",
-            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
-            "slug": "beta-alanine"
-          },
-          {
-            "id": "bakery-amino-acid-citrulline-malate",
-            "name": "Citrulline Malate",
-            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
-            "slug": "citrulline-malate"
-          },
-          {
-            "id": "bakery-amino-acid-l-arginine",
-            "name": "L-Arginine",
-            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
-            "slug": "l-arginine"
-          },
-          {
-            "id": "bakery-amino-acid-l-carnitine",
-            "name": "L-Carnitine",
-            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
-            "slug": "l-carnitine"
-          },
-          {
-            "id": "bakery-amino-acid-creatine-monohydrate",
-            "name": "Creatine Monohydrate",
-            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
-            "slug": "creatine-monohydrate"
-          },
-          {
-            "id": "bakery-amino-acid-l-glutamine",
-            "name": "L-Glutamine",
-            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
-            "slug": "l-glutamine"
-          },
-          {
-            "id": "bakery-amino-acid-aakg",
-            "name": "AAKG",
-            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
-            "slug": "aakg"
-          },
-          {
-            "id": "bakery-amino-acid-l-isoleucine",
-            "name": "L-Isoleucine",
-            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
-            "slug": "l-isoleucine"
-          },
-          {
-            "id": "bakery-amino-acid-l-valine",
-            "name": "L-Valine",
-            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
-            "slug": "l-valine"
-          }
-        ]
-      },
-      {
-        "title": "Milk & Related",
-        "items": [
-          {
-            "id": "bakery-milk-related-skimmed-milk-powder",
-            "name": "Skimmed Milk Powder",
-            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
-            "slug": "skimmed-milk-powder"
-          },
-          {
-            "id": "bakery-milk-related-whole-milk-powder",
-            "name": "Whole Milk Powder",
-            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
-            "slug": "whole-milk-powder"
-          },
-          {
-            "id": "bakery-milk-related-cheese-powder",
-            "name": "Cheese Powder",
-            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
-            "slug": "cheese-powder"
-          },
-          {
-            "id": "bakery-milk-related-calcium-caseinate",
-            "name": "Calcium Caseinate",
-            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
-            "slug": "calcium-caseinate"
+            "slug": "non-gmo-sunflower-lecithin-powderliquid"
           }
         ]
       }
     ]
   },
-  "dairy-ingredients": {
-    "title": "Dairy Ingredients",
-    "description": "Premium formulation ingredients designed for milk, cheese, and dairy alternative processing.",
-    "heroImg": "https://images.unsplash.com/photo-1600017189874-ce7ab37f90db?q=80&w=1600&auto=format&fit=crop",
+  "ice-cream": {
+    "title": "Ice Cream & Toppings",
+    "description": "Enhancing creaminess, mouthfeel and melting resistance for ice-cream manufacturers.",
+    "heroImg": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=1600&auto=format&fit=crop",
     "sections": [
       {
-        "title": "Milk & Related",
+        "title": "Preservative",
         "items": [
           {
-            "id": "dairy-ingredients-milk-related-skimmed-milk-powder",
-            "name": "Skimmed Milk Powder",
-            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
-            "slug": "skimmed-milk-powder"
-          },
-          {
-            "id": "dairy-ingredients-milk-related-whole-milk-powder",
-            "name": "Whole Milk Powder",
-            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
-            "slug": "whole-milk-powder"
-          },
-          {
-            "id": "dairy-ingredients-milk-related-cheese-powder",
-            "name": "Cheese Powder",
+            "id": "ice-cream-preservative-calcium-propionate",
+            "name": "Calcium Propionate",
             "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
-            "slug": "cheese-powder"
+            "slug": "calcium-propionate"
           },
           {
-            "id": "dairy-ingredients-milk-related-calcium-caseinate",
-            "name": "Calcium Caseinate",
-            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
-            "slug": "calcium-caseinate"
+            "id": "ice-cream-preservative-sodium-propionate",
+            "name": "Sodium Propionate",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "sodium-propionate"
+          },
+          {
+            "id": "ice-cream-preservative-potassium-sorbate",
+            "name": "Potassium Sorbate",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "potassium-sorbate"
+          },
+          {
+            "id": "ice-cream-preservative-sorbic-acid",
+            "name": "Sorbic Acid",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "sorbic-acid"
+          },
+          {
+            "id": "ice-cream-preservative-sodium-benzoate",
+            "name": "Sodium Benzoate",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "sodium-benzoate"
+          },
+          {
+            "id": "ice-cream-preservative-pgms",
+            "name": "PGMS",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "pgms"
+          },
+          {
+            "id": "ice-cream-preservative-datem",
+            "name": "Datem",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "datem"
           }
         ]
       },
       {
-        "title": "Preservatives",
+        "title": "Preservative / Emulsifier",
         "items": [
           {
-            "id": "dairy-ingredients-preservatives-calcium-propionate",
-            "name": "Calcium Propionate",
-            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
-            "slug": "calcium-propionate"
-          },
-          {
-            "id": "dairy-ingredients-preservatives-sodium-propionate",
-            "name": "Sodium Propionate",
-            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
-            "slug": "sodium-propionate"
-          },
-          {
-            "id": "dairy-ingredients-preservatives-potassium-sorbate",
-            "name": "Potassium Sorbate",
-            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
-            "slug": "potassium-sorbate"
-          },
-          {
-            "id": "dairy-ingredients-preservatives-sorbic-acid",
-            "name": "Sorbic Acid",
-            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
-            "slug": "sorbic-acid"
-          },
-          {
-            "id": "dairy-ingredients-preservatives-sodium-benzoate",
-            "name": "Sodium Benzoate",
-            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
-            "slug": "sodium-benzoate"
-          },
-          {
-            "id": "dairy-ingredients-preservatives-pgms",
-            "name": "PGMS",
-            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
-            "slug": "pgms"
-          },
-          {
-            "id": "dairy-ingredients-preservatives-datem",
-            "name": "Datem",
-            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
-            "slug": "datem"
-          },
-          {
-            "id": "dairy-ingredients-preservatives-dmg",
+            "id": "ice-cream-preservative-emulsifier-dmg",
             "name": "DMG",
-            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
             "slug": "dmg"
           }
         ]
       },
       {
-        "title": "Sweetener",
+        "title": "Sweetener & Polyol",
         "items": [
           {
-            "id": "dairy-ingredients-sweetener-fructose",
+            "id": "ice-cream-sweetener-polyol-fructose",
             "name": "Fructose",
-            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
             "slug": "fructose"
           },
           {
-            "id": "dairy-ingredients-sweetener-monk-fruit",
-            "name": "Monk Fruit",
-            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
-            "slug": "monk-fruit"
+            "id": "ice-cream-sweetener-polyol-monk-fruit-extract",
+            "name": "Monk Fruit Extract",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "monk-fruit-extract"
           },
           {
-            "id": "dairy-ingredients-sweetener-maltitol",
+            "id": "ice-cream-sweetener-polyol-maltitol",
             "name": "Maltitol",
-            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
             "slug": "maltitol"
           },
           {
-            "id": "dairy-ingredients-sweetener-acesulfame-k",
+            "id": "ice-cream-sweetener-polyol-acesulfame-k",
             "name": "Acesulfame K",
-            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
             "slug": "acesulfame-k"
           },
           {
-            "id": "dairy-ingredients-sweetener-sucralose",
+            "id": "ice-cream-sweetener-polyol-sucralose",
             "name": "Sucralose",
-            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
             "slug": "sucralose"
           },
           {
-            "id": "dairy-ingredients-sweetener-stevia",
+            "id": "ice-cream-sweetener-polyol-stevia",
             "name": "Stevia",
-            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
             "slug": "stevia"
           },
           {
-            "id": "dairy-ingredients-sweetener-aspartame",
+            "id": "ice-cream-sweetener-polyol-aspartame",
             "name": "Aspartame",
-            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
             "slug": "aspartame"
           },
           {
-            "id": "dairy-ingredients-sweetener-neotame",
+            "id": "ice-cream-sweetener-polyol-neotame",
             "name": "Neotame",
-            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
             "slug": "neotame"
           },
           {
-            "id": "dairy-ingredients-sweetener-xylitol",
+            "id": "ice-cream-sweetener-polyol-xylitol",
             "name": "Xylitol",
             "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
             "slug": "xylitol"
@@ -591,87 +648,1191 @@
         "title": "Protein",
         "items": [
           {
-            "id": "dairy-ingredients-protein-soya-protein-isolate",
-            "name": "Soya Protein Isolate",
-            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
-            "slug": "soya-protein-isolate"
+            "id": "ice-cream-protein-soya-protein-isolate-90",
+            "name": "Soya Protein Isolate 90 %",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-isolate-90"
           },
           {
-            "id": "dairy-ingredients-protein-soya-protein-concentrate",
+            "id": "ice-cream-protein-soya-protein-concentrate",
             "name": "Soya Protein Concentrate",
-            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
             "slug": "soya-protein-concentrate"
           },
           {
-            "id": "dairy-ingredients-protein-functional-wpc",
-            "name": "Functional WPC",
-            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
-            "slug": "functional-wpc"
+            "id": "ice-cream-protein-functional-whey-protein-concentrate-80",
+            "name": "Functional Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "functional-whey-protein-concentrate-80"
           },
           {
-            "id": "dairy-ingredients-protein-instant-wpc",
-            "name": "Instant WPC",
-            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
-            "slug": "instant-wpc"
+            "id": "ice-cream-protein-instant-whey-protein-concentrate-80",
+            "name": "Instant Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "instant-whey-protein-concentrate-80"
           },
           {
-            "id": "dairy-ingredients-protein-whey-protein-concentrate",
-            "name": "Whey Protein Concentrate",
+            "id": "ice-cream-protein-whey-protein-isolate",
+            "name": "Whey Protein Isolate",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "whey-protein-isolate"
+          },
+          {
+            "id": "ice-cream-protein-pea-protein-isolate",
+            "name": "Pea Protein Isolate",
             "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
-            "slug": "whey-protein-concentrate"
+            "slug": "pea-protein-isolate"
           },
           {
-            "id": "dairy-ingredients-protein-pea-protein-isolate",
+            "id": "ice-cream-protein-vital-wheat-gluten-vwg",
+            "name": "Vital Wheat Gluten (VWG)",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "vital-wheat-gluten-vwg"
+          },
+          {
+            "id": "ice-cream-protein-sweet-whey-powder-swp",
+            "name": "Sweet Whey Powder (SWP)",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "sweet-whey-powder-swp"
+          }
+        ]
+      },
+      {
+        "title": "Gums/Thickening Agent",
+        "items": [
+          {
+            "id": "ice-cream-gumsthickening-agent-xanthan-gum",
+            "name": "Xanthan Gum",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "xanthan-gum"
+          },
+          {
+            "id": "ice-cream-gumsthickening-agent-guar-gum",
+            "name": "Guar Gum",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "guar-gum"
+          },
+          {
+            "id": "ice-cream-gumsthickening-agent-carrageenan-dairy-grade",
+            "name": "Carrageenan (Dairy Grade)",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "carrageenan-dairy-grade"
+          },
+          {
+            "id": "ice-cream-gumsthickening-agent-pectin-jam-jelly-grade",
+            "name": "Pectin (Jam / Jelly Grade)",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "pectin-jam-jelly-grade"
+          },
+          {
+            "id": "ice-cream-gumsthickening-agent-type-ii-collagen",
+            "name": "Type II Collagen",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "type-ii-collagen"
+          }
+        ]
+      },
+      {
+        "title": "Cocoa",
+        "items": [
+          {
+            "id": "ice-cream-cocoa-natural-cocoa-powder",
+            "name": "Natural Cocoa Powder",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "natural-cocoa-powder"
+          },
+          {
+            "id": "ice-cream-cocoa-light-brown-cocoa",
+            "name": "Light Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "light-brown-cocoa"
+          },
+          {
+            "id": "ice-cream-cocoa-dark-brown-cocoa",
+            "name": "Dark Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "dark-brown-cocoa"
+          },
+          {
+            "id": "ice-cream-cocoa-regular-brown-cocoa",
+            "name": "Regular Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "regular-brown-cocoa"
+          },
+          {
+            "id": "ice-cream-cocoa-alkalized-cocoa-powder",
+            "name": "Alkalized Cocoa Powder",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "alkalized-cocoa-powder"
+          },
+          {
+            "id": "ice-cream-cocoa-dm-cocoa",
+            "name": "DM Cocoa",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "dm-cocoa"
+          }
+        ]
+      },
+      {
+        "title": "Fibers",
+        "items": [
+          {
+            "id": "ice-cream-fibers-polydextrose",
+            "name": "Polydextrose",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "polydextrose"
+          },
+          {
+            "id": "ice-cream-fibers-soy-fiber",
+            "name": "Soy Fiber",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "soy-fiber"
+          },
+          {
+            "id": "ice-cream-fibers-gum-acacia",
+            "name": "Gum Acacia",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "gum-acacia"
+          },
+          {
+            "id": "ice-cream-fibers-oat-fiber",
+            "name": "Oat Fiber",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "oat-fiber"
+          },
+          {
+            "id": "ice-cream-fibers-wheat-fiber",
+            "name": "Wheat Fiber",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "wheat-fiber"
+          }
+        ]
+      },
+      {
+        "title": "Emulsifier",
+        "items": [
+          {
+            "id": "ice-cream-emulsifier-non-gmo-soya-lecithin-powderliquid",
+            "name": "Non GMO Soya Lecithin (Powder/Liquid)",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "non-gmo-soya-lecithin-powderliquid"
+          },
+          {
+            "id": "ice-cream-emulsifier-non-gmo-sunflower-lecithin-powderliquid",
+            "name": "Non GMO Sunflower Lecithin (Powder/Liquid)",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "non-gmo-sunflower-lecithin-powderliquid"
+          }
+        ]
+      }
+    ]
+  },
+  "beverages": {
+    "title": "Beverages",
+    "description": "Stabilizers and functional solutions for juices, drinks and healthy beverages.",
+    "heroImg": "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=1600&auto=format&fit=crop",
+    "sections": [
+      {
+        "title": "Preservative",
+        "items": [
+          {
+            "id": "beverages-preservative-calcium-propionate",
+            "name": "Calcium Propionate",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "calcium-propionate"
+          },
+          {
+            "id": "beverages-preservative-sodium-propionate",
+            "name": "Sodium Propionate",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "sodium-propionate"
+          },
+          {
+            "id": "beverages-preservative-potassium-sorbate",
+            "name": "Potassium Sorbate",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "potassium-sorbate"
+          },
+          {
+            "id": "beverages-preservative-sorbic-acid",
+            "name": "Sorbic Acid",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "sorbic-acid"
+          },
+          {
+            "id": "beverages-preservative-sodium-benzoate",
+            "name": "Sodium Benzoate",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "sodium-benzoate"
+          },
+          {
+            "id": "beverages-preservative-pgms",
+            "name": "PGMS",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "pgms"
+          },
+          {
+            "id": "beverages-preservative-datem",
+            "name": "Datem",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "datem"
+          }
+        ]
+      },
+      {
+        "title": "Preservative / Emulsifier",
+        "items": [
+          {
+            "id": "beverages-preservative-emulsifier-dmg",
+            "name": "DMG",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "dmg"
+          }
+        ]
+      },
+      {
+        "title": "Protein",
+        "items": [
+          {
+            "id": "beverages-protein-soya-protein-isolate-90",
+            "name": "Soya Protein Isolate 90 %",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-isolate-90"
+          },
+          {
+            "id": "beverages-protein-soya-protein-concentrate",
+            "name": "Soya Protein Concentrate",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-concentrate"
+          },
+          {
+            "id": "beverages-protein-functional-whey-protein-concentrate-80",
+            "name": "Functional Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "functional-whey-protein-concentrate-80"
+          },
+          {
+            "id": "beverages-protein-instant-whey-protein-concentrate-80",
+            "name": "Instant Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "instant-whey-protein-concentrate-80"
+          },
+          {
+            "id": "beverages-protein-whey-protein-isolate",
+            "name": "Whey Protein Isolate",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "whey-protein-isolate"
+          },
+          {
+            "id": "beverages-protein-pea-protein-isolate",
             "name": "Pea Protein Isolate",
             "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
             "slug": "pea-protein-isolate"
           },
           {
-            "id": "dairy-ingredients-protein-vwg",
-            "name": "VWG",
-            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
-            "slug": "vwg"
+            "id": "beverages-protein-vital-wheat-gluten-vwg",
+            "name": "Vital Wheat Gluten (VWG)",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "vital-wheat-gluten-vwg"
+          },
+          {
+            "id": "beverages-protein-sweet-whey-powder-swp",
+            "name": "Sweet Whey Powder (SWP)",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "sweet-whey-powder-swp"
           }
         ]
       },
       {
-        "title": "Gums / Thickeners",
+        "title": "Gums/Thickening Agent",
         "items": [
           {
-            "id": "dairy-ingredients-gums-thickeners-xanthan-gum",
+            "id": "beverages-gumsthickening-agent-xanthan-gum",
+            "name": "Xanthan Gum",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "xanthan-gum"
+          },
+          {
+            "id": "beverages-gumsthickening-agent-guar-gum",
+            "name": "Guar Gum",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "guar-gum"
+          },
+          {
+            "id": "beverages-gumsthickening-agent-carrageenan-dairy-grade",
+            "name": "Carrageenan (Dairy Grade)",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "carrageenan-dairy-grade"
+          },
+          {
+            "id": "beverages-gumsthickening-agent-pectin-jam-jelly-grade",
+            "name": "Pectin (Jam / Jelly Grade)",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "pectin-jam-jelly-grade"
+          },
+          {
+            "id": "beverages-gumsthickening-agent-type-ii-collagen",
+            "name": "Type II Collagen",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "type-ii-collagen"
+          }
+        ]
+      },
+      {
+        "title": "Cocoa",
+        "items": [
+          {
+            "id": "beverages-cocoa-natural-cocoa-powder",
+            "name": "Natural Cocoa Powder",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "natural-cocoa-powder"
+          },
+          {
+            "id": "beverages-cocoa-light-brown-cocoa",
+            "name": "Light Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "light-brown-cocoa"
+          },
+          {
+            "id": "beverages-cocoa-dark-brown-cocoa",
+            "name": "Dark Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "dark-brown-cocoa"
+          },
+          {
+            "id": "beverages-cocoa-regular-brown-cocoa",
+            "name": "Regular Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "regular-brown-cocoa"
+          },
+          {
+            "id": "beverages-cocoa-alkalized-cocoa-powder",
+            "name": "Alkalized Cocoa Powder",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "alkalized-cocoa-powder"
+          },
+          {
+            "id": "beverages-cocoa-dm-cocoa",
+            "name": "DM Cocoa",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "dm-cocoa"
+          }
+        ]
+      },
+      {
+        "title": "Amino Acids",
+        "items": [
+          {
+            "id": "beverages-amino-acids-bcaa-211-instant-vegan",
+            "name": "BCAA 2:1:1 Instant Vegan",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "bcaa-211-instant-vegan"
+          },
+          {
+            "id": "beverages-amino-acids-beta-alanine",
+            "name": "Beta Alanine",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "beta-alanine"
+          },
+          {
+            "id": "beverages-amino-acids-citrulline-malate",
+            "name": "Citrulline Malate",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "citrulline-malate"
+          },
+          {
+            "id": "beverages-amino-acids-l-arginine",
+            "name": "L-Arginine",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "l-arginine"
+          },
+          {
+            "id": "beverages-amino-acids-alcarnitine",
+            "name": "Alcarnitine",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "alcarnitine"
+          },
+          {
+            "id": "beverages-amino-acids-creatine-mono-hydrate",
+            "name": "Creatine Mono Hydrate",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "creatine-mono-hydrate"
+          },
+          {
+            "id": "beverages-amino-acids-l-glutamine",
+            "name": "L-Glutamine",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "l-glutamine"
+          },
+          {
+            "id": "beverages-amino-acids-aakg",
+            "name": "AAKG",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "aakg"
+          },
+          {
+            "id": "beverages-amino-acids-l-isoleucine",
+            "name": "L-Isoleucine",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "l-isoleucine"
+          },
+          {
+            "id": "beverages-amino-acids-l-valine",
+            "name": "L-Valine",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "l-valine"
+          }
+        ]
+      }
+    ]
+  },
+  "dairy": {
+    "title": "Dairy",
+    "description": "Ingredients that improve texture, stability and nutrition in dairy products.",
+    "heroImg": "https://images.unsplash.com/photo-1600017189874-ce7ab37f90db?q=80&w=1600&auto=format&fit=crop",
+    "sections": [
+      {
+        "title": "Milk & Related Product",
+        "items": [
+          {
+            "id": "dairy-milk-related-product-skimmed-milk-powder",
+            "name": "Skimmed Milk Powder",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "skimmed-milk-powder"
+          },
+          {
+            "id": "dairy-milk-related-product-whole-milk-powder",
+            "name": "Whole Milk Powder",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "whole-milk-powder"
+          },
+          {
+            "id": "dairy-milk-related-product-cheese-powder",
+            "name": "Cheese Powder",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "cheese-powder"
+          },
+          {
+            "id": "dairy-milk-related-product-calcium-caseinate",
+            "name": "Calcium Caseinate",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "calcium-caseinate"
+          }
+        ]
+      },
+      {
+        "title": "Preservative",
+        "items": [
+          {
+            "id": "dairy-preservative-calcium-propionate",
+            "name": "Calcium Propionate",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "calcium-propionate"
+          },
+          {
+            "id": "dairy-preservative-sodium-propionate",
+            "name": "Sodium Propionate",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "sodium-propionate"
+          },
+          {
+            "id": "dairy-preservative-potassium-sorbate",
+            "name": "Potassium Sorbate",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "potassium-sorbate"
+          },
+          {
+            "id": "dairy-preservative-sorbic-acid",
+            "name": "Sorbic Acid",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "sorbic-acid"
+          },
+          {
+            "id": "dairy-preservative-sodium-benzoate",
+            "name": "Sodium Benzoate",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "sodium-benzoate"
+          },
+          {
+            "id": "dairy-preservative-pgms",
+            "name": "PGMS",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "pgms"
+          },
+          {
+            "id": "dairy-preservative-datem",
+            "name": "Datem",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "datem"
+          }
+        ]
+      },
+      {
+        "title": "Preservative / Emulsifier",
+        "items": [
+          {
+            "id": "dairy-preservative-emulsifier-dmg",
+            "name": "DMG",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "dmg"
+          }
+        ]
+      },
+      {
+        "title": "Sweetener & Polyol",
+        "items": [
+          {
+            "id": "dairy-sweetener-polyol-fructose",
+            "name": "Fructose",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "fructose"
+          },
+          {
+            "id": "dairy-sweetener-polyol-monk-fruit-extract",
+            "name": "Monk Fruit Extract",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "monk-fruit-extract"
+          },
+          {
+            "id": "dairy-sweetener-polyol-maltitol",
+            "name": "Maltitol",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "maltitol"
+          },
+          {
+            "id": "dairy-sweetener-polyol-acesulfame-k",
+            "name": "Acesulfame K",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "acesulfame-k"
+          },
+          {
+            "id": "dairy-sweetener-polyol-sucralose",
+            "name": "Sucralose",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "sucralose"
+          },
+          {
+            "id": "dairy-sweetener-polyol-stevia",
+            "name": "Stevia",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "stevia"
+          },
+          {
+            "id": "dairy-sweetener-polyol-aspartame",
+            "name": "Aspartame",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "aspartame"
+          },
+          {
+            "id": "dairy-sweetener-polyol-neotame",
+            "name": "Neotame",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "neotame"
+          },
+          {
+            "id": "dairy-sweetener-polyol-xylitol",
+            "name": "Xylitol",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "xylitol"
+          }
+        ]
+      },
+      {
+        "title": "Protein",
+        "items": [
+          {
+            "id": "dairy-protein-soya-protein-isolate-90",
+            "name": "Soya Protein Isolate 90 %",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-isolate-90"
+          },
+          {
+            "id": "dairy-protein-soya-protein-concentrate",
+            "name": "Soya Protein Concentrate",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-concentrate"
+          },
+          {
+            "id": "dairy-protein-functional-whey-protein-concentrate-80",
+            "name": "Functional Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "functional-whey-protein-concentrate-80"
+          },
+          {
+            "id": "dairy-protein-instant-whey-protein-concentrate-80",
+            "name": "Instant Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "instant-whey-protein-concentrate-80"
+          },
+          {
+            "id": "dairy-protein-whey-protein-isolate",
+            "name": "Whey Protein Isolate",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "whey-protein-isolate"
+          },
+          {
+            "id": "dairy-protein-pea-protein-isolate",
+            "name": "Pea Protein Isolate",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "pea-protein-isolate"
+          },
+          {
+            "id": "dairy-protein-vital-wheat-gluten-vwg",
+            "name": "Vital Wheat Gluten (VWG)",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "vital-wheat-gluten-vwg"
+          }
+        ]
+      },
+      {
+        "title": "Gums/Thickening Agent",
+        "items": [
+          {
+            "id": "dairy-gumsthickening-agent-xanthan-gum",
+            "name": "Xanthan Gum",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "xanthan-gum"
+          },
+          {
+            "id": "dairy-gumsthickening-agent-guar-gum",
+            "name": "Guar Gum",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "guar-gum"
+          },
+          {
+            "id": "dairy-gumsthickening-agent-carrageenan-dairy-grade",
+            "name": "Carrageenan (Dairy Grade)",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "carrageenan-dairy-grade"
+          },
+          {
+            "id": "dairy-gumsthickening-agent-pectin-jam-jelly-grade",
+            "name": "Pectin (Jam / Jelly Grade)",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "pectin-jam-jelly-grade"
+          },
+          {
+            "id": "dairy-gumsthickening-agent-type-ii-collagen",
+            "name": "Type II Collagen",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "type-ii-collagen"
+          }
+        ]
+      }
+    ]
+  },
+  "health-nutrition": {
+    "title": "Health & Nutrition",
+    "description": "Nutrition-focused products that boost overall health, performance, and daily balance.",
+    "heroImg": "https://images.unsplash.com/photo-1505576399279-b4beaa2a61af?q=80&w=1600&auto=format&fit=crop",
+    "sections": [
+      {
+        "title": "Preservative",
+        "items": [
+          {
+            "id": "health-nutrition-preservative-calcium-propionate",
+            "name": "Calcium Propionate",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "calcium-propionate"
+          },
+          {
+            "id": "health-nutrition-preservative-sodium-propionate",
+            "name": "Sodium Propionate",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "sodium-propionate"
+          },
+          {
+            "id": "health-nutrition-preservative-potassium-sorbate",
+            "name": "Potassium Sorbate",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "potassium-sorbate"
+          },
+          {
+            "id": "health-nutrition-preservative-sorbic-acid",
+            "name": "Sorbic Acid",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "sorbic-acid"
+          },
+          {
+            "id": "health-nutrition-preservative-sodium-benzoate",
+            "name": "Sodium Benzoate",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "sodium-benzoate"
+          },
+          {
+            "id": "health-nutrition-preservative-pgms",
+            "name": "PGMS",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "pgms"
+          },
+          {
+            "id": "health-nutrition-preservative-datem",
+            "name": "Datem",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "datem"
+          }
+        ]
+      },
+      {
+        "title": "Preservative / Emulsifier",
+        "items": [
+          {
+            "id": "health-nutrition-preservative-emulsifier-dmg",
+            "name": "DMG",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "dmg"
+          }
+        ]
+      },
+      {
+        "title": "Protein",
+        "items": [
+          {
+            "id": "health-nutrition-protein-soya-protein-isolate-90",
+            "name": "Soya Protein Isolate 90 %",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-isolate-90"
+          },
+          {
+            "id": "health-nutrition-protein-soya-protein-concentrate",
+            "name": "Soya Protein Concentrate",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-concentrate"
+          },
+          {
+            "id": "health-nutrition-protein-functional-whey-protein-concentrate-80",
+            "name": "Functional Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "functional-whey-protein-concentrate-80"
+          },
+          {
+            "id": "health-nutrition-protein-instant-whey-protein-concentrate-80",
+            "name": "Instant Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "instant-whey-protein-concentrate-80"
+          },
+          {
+            "id": "health-nutrition-protein-whey-protein-isolate",
+            "name": "Whey Protein Isolate",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "whey-protein-isolate"
+          },
+          {
+            "id": "health-nutrition-protein-pea-protein-isolate",
+            "name": "Pea Protein Isolate",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "pea-protein-isolate"
+          },
+          {
+            "id": "health-nutrition-protein-vital-wheat-gluten-vwg",
+            "name": "Vital Wheat Gluten (VWG)",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "vital-wheat-gluten-vwg"
+          }
+        ]
+      },
+      {
+        "title": "Gums/Thickening Agent",
+        "items": [
+          {
+            "id": "health-nutrition-gumsthickening-agent-xanthan-gum",
             "name": "Xanthan Gum",
             "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
             "slug": "xanthan-gum"
           },
           {
-            "id": "dairy-ingredients-gums-thickeners-guar-gum",
+            "id": "health-nutrition-gumsthickening-agent-guar-gum",
             "name": "Guar Gum",
-            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
             "slug": "guar-gum"
           },
           {
-            "id": "dairy-ingredients-gums-thickeners-carrageenan",
-            "name": "Carrageenan",
-            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
-            "slug": "carrageenan"
+            "id": "health-nutrition-gumsthickening-agent-carrageenan-dairy-grade",
+            "name": "Carrageenan (Dairy Grade)",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "carrageenan-dairy-grade"
           },
           {
-            "id": "dairy-ingredients-gums-thickeners-pectin-jam",
-            "name": "Pectin Jam",
-            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
-            "slug": "pectin-jam"
-          },
-          {
-            "id": "dairy-ingredients-gums-thickeners-pectin-jelly",
-            "name": "Pectin Jelly",
+            "id": "health-nutrition-gumsthickening-agent-pectin-jam-jelly-grade",
+            "name": "Pectin (Jam / Jelly Grade)",
             "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
-            "slug": "pectin-jelly"
+            "slug": "pectin-jam-jelly-grade"
           },
           {
-            "id": "dairy-ingredients-gums-thickeners-type-ii-collagen",
+            "id": "health-nutrition-gumsthickening-agent-type-ii-collagen",
             "name": "Type II Collagen",
-            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
             "slug": "type-ii-collagen"
+          }
+        ]
+      },
+      {
+        "title": "Cocoa",
+        "items": [
+          {
+            "id": "health-nutrition-cocoa-natural-cocoa-powder",
+            "name": "Natural Cocoa Powder",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "natural-cocoa-powder"
+          },
+          {
+            "id": "health-nutrition-cocoa-light-brown-cocoa",
+            "name": "Light Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "light-brown-cocoa"
+          },
+          {
+            "id": "health-nutrition-cocoa-dark-brown-cocoa",
+            "name": "Dark Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "dark-brown-cocoa"
+          },
+          {
+            "id": "health-nutrition-cocoa-regular-brown-cocoa",
+            "name": "Regular Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "regular-brown-cocoa"
+          },
+          {
+            "id": "health-nutrition-cocoa-alkalized-cocoa-powder",
+            "name": "Alkalized Cocoa Powder",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "alkalized-cocoa-powder"
+          },
+          {
+            "id": "health-nutrition-cocoa-dm-cocoa",
+            "name": "DM Cocoa",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "dm-cocoa"
+          }
+        ]
+      },
+      {
+        "title": "Amino Acids",
+        "items": [
+          {
+            "id": "health-nutrition-amino-acids-bcaa-211-instant-vegan",
+            "name": "BCAA 2:1:1 Instant Vegan",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "bcaa-211-instant-vegan"
+          },
+          {
+            "id": "health-nutrition-amino-acids-beta-alanine",
+            "name": "Beta Alanine",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "beta-alanine"
+          },
+          {
+            "id": "health-nutrition-amino-acids-citrulline-malate",
+            "name": "Citrulline Malate",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "citrulline-malate"
+          },
+          {
+            "id": "health-nutrition-amino-acids-l-arginine",
+            "name": "L-Arginine",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "l-arginine"
+          },
+          {
+            "id": "health-nutrition-amino-acids-alcarnitine",
+            "name": "Alcarnitine",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "alcarnitine"
+          },
+          {
+            "id": "health-nutrition-amino-acids-creatine-mono-hydrate",
+            "name": "Creatine Mono Hydrate",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "creatine-mono-hydrate"
+          },
+          {
+            "id": "health-nutrition-amino-acids-l-glutamine",
+            "name": "L-Glutamine",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "l-glutamine"
+          },
+          {
+            "id": "health-nutrition-amino-acids-aakg",
+            "name": "AAKG",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "aakg"
+          },
+          {
+            "id": "health-nutrition-amino-acids-l-isoleucine",
+            "name": "L-Isoleucine",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "l-isoleucine"
+          },
+          {
+            "id": "health-nutrition-amino-acids-l-valine",
+            "name": "L-Valine",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "l-valine"
+          }
+        ]
+      }
+    ]
+  },
+  "sauces-condiments": {
+    "title": "Sauces & Condiments",
+    "description": "Innovative ingredient solutions for sauces, dressings, condiments and culinary applications.",
+    "heroImg": "https://images.unsplash.com/photo-1558227691-41ea78d1f631?q=80&w=1600&auto=format&fit=crop",
+    "sections": [
+      {
+        "title": "Protein",
+        "items": [
+          {
+            "id": "sauces-condiments-protein-soya-protein-isolate-90",
+            "name": "Soya Protein Isolate 90 %",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-isolate-90"
+          },
+          {
+            "id": "sauces-condiments-protein-soya-protein-concentrate",
+            "name": "Soya Protein Concentrate",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-concentrate"
+          },
+          {
+            "id": "sauces-condiments-protein-functional-whey-protein-concentrate-80",
+            "name": "Functional Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "functional-whey-protein-concentrate-80"
+          },
+          {
+            "id": "sauces-condiments-protein-instant-whey-protein-concentrate-80",
+            "name": "Instant Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "instant-whey-protein-concentrate-80"
+          },
+          {
+            "id": "sauces-condiments-protein-whey-protein-isolate",
+            "name": "Whey Protein Isolate",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "whey-protein-isolate"
+          },
+          {
+            "id": "sauces-condiments-protein-pea-protein-isolate",
+            "name": "Pea Protein Isolate",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "pea-protein-isolate"
+          },
+          {
+            "id": "sauces-condiments-protein-vital-wheat-gluten-vwg",
+            "name": "Vital Wheat Gluten (VWG)",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "vital-wheat-gluten-vwg"
+          }
+        ]
+      },
+      {
+        "title": "Gums/Thickening Agent",
+        "items": [
+          {
+            "id": "sauces-condiments-gumsthickening-agent-xanthan-gum",
+            "name": "Xanthan Gum",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "xanthan-gum"
+          },
+          {
+            "id": "sauces-condiments-gumsthickening-agent-guar-gum",
+            "name": "Guar Gum",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "guar-gum"
+          },
+          {
+            "id": "sauces-condiments-gumsthickening-agent-carrageenan-dairy-grade",
+            "name": "Carrageenan (Dairy Grade)",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "carrageenan-dairy-grade"
+          },
+          {
+            "id": "sauces-condiments-gumsthickening-agent-pectin-jam-jelly-grade",
+            "name": "Pectin (Jam / Jelly Grade)",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "pectin-jam-jelly-grade"
+          },
+          {
+            "id": "sauces-condiments-gumsthickening-agent-type-ii-collagen",
+            "name": "Type II Collagen",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "type-ii-collagen"
+          }
+        ]
+      },
+      {
+        "title": "Cocoa",
+        "items": [
+          {
+            "id": "sauces-condiments-cocoa-natural-cocoa-powder",
+            "name": "Natural Cocoa Powder",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "natural-cocoa-powder"
+          },
+          {
+            "id": "sauces-condiments-cocoa-light-brown-cocoa",
+            "name": "Light Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "light-brown-cocoa"
+          },
+          {
+            "id": "sauces-condiments-cocoa-dark-brown-cocoa",
+            "name": "Dark Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop",
+            "slug": "dark-brown-cocoa"
+          },
+          {
+            "id": "sauces-condiments-cocoa-regular-brown-cocoa",
+            "name": "Regular Brown Cocoa",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "regular-brown-cocoa"
+          },
+          {
+            "id": "sauces-condiments-cocoa-alkalized-cocoa-powder",
+            "name": "Alkalized Cocoa Powder",
+            "img": "https://images.unsplash.com/photo-1610444385150-f6515a0de7bd?q=80&w=800&auto=format&fit=crop",
+            "slug": "alkalized-cocoa-powder"
+          },
+          {
+            "id": "sauces-condiments-cocoa-dm-cocoa",
+            "name": "DM Cocoa",
+            "img": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?q=80&w=800&auto=format&fit=crop",
+            "slug": "dm-cocoa"
+          }
+        ]
+      }
+    ]
+  },
+  "edible-fat": {
+    "title": "Edible Fat & Other Products",
+    "description": "High-quality edible fats and versatile ingredient solutions for diverse food and bakery applications.",
+    "heroImg": "https://images.unsplash.com/photo-1596647416395-5858cf0ae6df?q=80&w=1600&auto=format&fit=crop",
+    "sections": [
+      {
+        "title": "Protein",
+        "items": [
+          {
+            "id": "edible-fat-protein-soya-protein-isolate-90",
+            "name": "Soya Protein Isolate 90 %",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-isolate-90"
+          },
+          {
+            "id": "edible-fat-protein-soya-protein-concentrate",
+            "name": "Soya Protein Concentrate",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-protein-concentrate"
+          },
+          {
+            "id": "edible-fat-protein-functional-whey-protein-concentrate-80",
+            "name": "Functional Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "functional-whey-protein-concentrate-80"
+          },
+          {
+            "id": "edible-fat-protein-instant-whey-protein-concentrate-80",
+            "name": "Instant Whey Protein Concentrate 80 %",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "instant-whey-protein-concentrate-80"
+          },
+          {
+            "id": "edible-fat-protein-whey-protein-isolate",
+            "name": "Whey Protein Isolate",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "whey-protein-isolate"
+          },
+          {
+            "id": "edible-fat-protein-pea-protein-isolate",
+            "name": "Pea Protein Isolate",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "pea-protein-isolate"
+          },
+          {
+            "id": "edible-fat-protein-vital-wheat-gluten-vwg",
+            "name": "Vital Wheat Gluten (VWG)",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "vital-wheat-gluten-vwg"
+          }
+        ]
+      },
+      {
+        "title": "Gums/Thickening Agent",
+        "items": [
+          {
+            "id": "edible-fat-gumsthickening-agent-xanthan-gum",
+            "name": "Xanthan Gum",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "xanthan-gum"
+          },
+          {
+            "id": "edible-fat-gumsthickening-agent-guar-gum",
+            "name": "Guar Gum",
+            "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
+            "slug": "guar-gum"
+          },
+          {
+            "id": "edible-fat-gumsthickening-agent-carrageenan-dairy-grade",
+            "name": "Carrageenan (Dairy Grade)",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "carrageenan-dairy-grade"
+          },
+          {
+            "id": "edible-fat-gumsthickening-agent-pectin-jam-jelly-grade",
+            "name": "Pectin (Jam / Jelly Grade)",
+            "img": "https://images.unsplash.com/photo-1495147466023-e62eaca9cf76?q=80&w=800&auto=format&fit=crop",
+            "slug": "pectin-jam-jelly-grade"
+          },
+          {
+            "id": "edible-fat-gumsthickening-agent-type-ii-collagen",
+            "name": "Type II Collagen",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "type-ii-collagen"
+          }
+        ]
+      },
+      {
+        "title": "Emulsifier",
+        "items": [
+          {
+            "id": "edible-fat-emulsifier-non-gmo-soya-lecithin-powderliquid",
+            "name": "Non GMO Soya Lecithin (Powder/Liquid)",
+            "img": "https://images.unsplash.com/photo-1606313337699-2a9c11bdc6ce?q=80&w=800&auto=format&fit=crop",
+            "slug": "non-gmo-soya-lecithin-powderliquid"
+          },
+          {
+            "id": "edible-fat-emulsifier-non-gmo-sunflower-lecithin-powderliquid",
+            "name": "Non GMO Sunflower Lecithin (Powder/Liquid)",
+            "img": "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=800&auto=format&fit=crop",
+            "slug": "non-gmo-sunflower-lecithin-powderliquid"
+          }
+        ]
+      },
+      {
+        "title": "Fats",
+        "items": [
+          {
+            "id": "edible-fat-fats-full-fat-soya-flour-grit",
+            "name": "Full Fat Soya Flour / Grit",
+            "img": "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=800&auto=format&fit=crop",
+            "slug": "full-fat-soya-flour-grit"
+          },
+          {
+            "id": "edible-fat-fats-soya-flour-grit-untoastedtoasted",
+            "name": "Soya Flour / Grit (Untoasted/Toasted)",
+            "img": "https://images.unsplash.com/photo-1554522438-fb1c86db254c?q=80&w=800&auto=format&fit=crop",
+            "slug": "soya-flour-grit-untoastedtoasted"
+          }
+        ]
+      },
+      {
+        "title": "Vegetable Protein",
+        "items": [
+          {
+            "id": "edible-fat-vegetable-protein-textured-vegetable-protein-squaregranules",
+            "name": "Textured Vegetable Protein (Square/Granules)",
+            "img": "https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=800&auto=format&fit=crop",
+            "slug": "textured-vegetable-protein-squaregranules"
           }
         ]
       }

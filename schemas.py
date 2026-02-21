@@ -4,18 +4,18 @@ from typing import Optional
 class ProductBase(BaseModel):
     name: str
     slug: Optional[str] = None
-    sku_name: str
-    country_of_origin: str
-    quality: str
-    product_overview: str
-    generic_specs: str
-    applications: str
-    packaging: str
-    certifications: str
-    category: str
-    status: str
+    sku_name: Optional[str] = ""
+    country_of_origin: Optional[str] = ""
+    quality: Optional[str] = ""
+    product_overview: Optional[str] = ""
+    generic_specs: Optional[str] = "[]"
+    applications: Optional[str] = ""
+    packaging: Optional[str] = ""
+    certifications: Optional[str] = ""
+    category: Optional[str] = "Others"
+    status: Optional[str] = "Active"
     image: Optional[str] = ""
-    is_bestseller: bool = False
+    is_bestseller: Optional[bool] = False
 
 class ProductCreate(ProductBase):
     pass

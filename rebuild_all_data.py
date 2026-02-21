@@ -183,5 +183,21 @@ for item in items_data:
         ))
 
 db.commit()
+
+# 3. Re-seed the admin user (rebuild drops all tables including users!)
+import auth as auth_module
+existing_admin = db.query(models.User).filter(models.User.username == "admin").first()
+if not existing_admin:
+    admin_user = models.User(
+        username="admin",
+        email="admin@sgutrade.com",
+        hashed_password=auth_module.get_password_hash("admin123")
+    )
+    db.add(admin_user)
+    db.commit()
+    print("Admin user re-created.")
+else:
+    print("Admin user already exists, skipping.")
+
 db.close()
 print("Database Rebuild Complete!")

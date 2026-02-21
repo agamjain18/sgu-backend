@@ -21,8 +21,7 @@ jobs:
             python3 -m venv venv
             source venv/bin/activate
             pip install -r requirements.txt
-            python3 fix_schemas.py
-            python3 sync_products.py
+            python3 rebuild_all_data.py
             pm2 delete sgu-backend || true
             pm2 start ecosystem.config.js
             sleep 3

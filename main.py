@@ -164,10 +164,30 @@ def create_product(product: schemas.ProductCreate, db: Session = Depends(get_db)
     db.refresh(db_product)
     return db_product
 
+import time
+
+# Simple in-memory server cache
+server_cache = {
+    "products": {"data": None, "timestamp": 0},
+    "industry_products": {"data": None, "timestamp": 0}
+}
+CACHE_TTL = 300 # 5 minutes
+
 @app.get("/products/", response_model=List[schemas.Product])
 def read_products(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     try:
+        current_time = time.time()
+        # Serve from fast in-memory cache if valid
+        if skip == 0 and limit == 1000:
+            if server_cache["products"]["data"] and (current_time - server_cache["products"]["timestamp"] < CACHE_TTL):
+                return server_cache["products"]["data"]
+                
         products = db.query(models.Product).offset(skip).limit(limit).all()
+        
+        if skip == 0 and limit == 1000:
+            server_cache["products"]["data"] = products
+            server_cache["products"]["timestamp"] = current_time
+            
         return products
     except Exception as e:
         logging.error(f"Error in read_products: {str(e)}")

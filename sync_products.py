@@ -31,17 +31,29 @@ for ind_slug, ind_data in data.items():
             
             # Check if product exists by slug
             existing = db.query(models.Product).filter(models.Product.slug == prod_slug).first()
-            if not existing:
+            if existing:
+                # Fix null values in existing to prevent 500 errors
+                if existing.sku_name is None: existing.sku_name = prod_name
+                if existing.generic_specs is None: existing.generic_specs = "[]"
+                if existing.applications is None: existing.applications = ""
+                if existing.packaging is None: existing.packaging = "Standard 25kg bags"
+                if existing.certifications is None: existing.certifications = "ISO, FSSAI"
+            else:
                 print(f"Adding product: {prod_name}")
                 new_prod = models.Product(
                     name=prod_name,
                     slug=prod_slug,
+                    sku_name=prod_name,
                     category=category_name, # Map section to category
                     image=prod_img,
                     status='Active',
                     product_overview=f"Premium {prod_name} for the {ind_data['title']} industry.",
                     country_of_origin="Various",
                     quality="High Grade",
+                    generic_specs="[]",
+                    applications="",
+                    packaging="Standard 25kg bags",
+                    certifications="ISO, FSSAI"
                 )
                 db.add(new_prod)
 

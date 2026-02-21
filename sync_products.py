@@ -62,17 +62,17 @@ Full Fat Soya Flour / Grit,Fats,Edible Fats & Others
 Soya Flour / Grit (Untoasted/Toasted),Fats,Edible Fats & Others
 Textured Vegetable Protein (Square/Granules),Vegetable Protein,Edible Fats & Others"""
 
-# Mapping for the main Products page categories
 cat_map = {
     'Dairy Ingredients': 'Dairy',
     'Bakery': 'Bakery',
     'Confectionery': 'Confectionery',
     'Beverage': 'Beverage',
     'Ice Cream': 'Dairy',
-    'Health': 'Nutritional',
     'Health & Nutrition': 'Nutritional',
+    'Health': 'Nutritional',
     'All Categories': 'Food Ingredients',
-    'Sauces': 'Food Ingredients'
+    'Sauces': 'Food Ingredients',
+    'Edible Fats': 'Food Ingredients'
 }
 
 def get_primary_category(ind_str):
@@ -81,9 +81,8 @@ def get_primary_category(ind_str):
     for p in parts:
         for k, v in cat_map.items():
             if k in p: return v
-    return "Others"
+    return "Food Ingredients"
 
-# Unroll names like / 
 def split_slash_names(name):
     if " / " in name:
         return [n.strip() for n in name.split(' / ')]
@@ -91,21 +90,25 @@ def split_slash_names(name):
 
 reader = csv.reader(io.StringIO(csv_data))
 items = []
-last_raw_cat = ""
 for row in reader:
     if len(row) == 1:
         names = split_slash_names(row[0])
-        for n in names:
-            items.append({'name': n, 'ind': last_ind_str})
+        for n in names: items.append({'name': n, 'ind': last_ind_str})
     else:
         name_col, raw_cat, ind_str = row
         last_ind_str = ind_str
         names = split_slash_names(name_col)
-        for n in names:
-            items.append({'name': n, 'ind': ind_str})
+        for n in names: items.append({'name': n, 'ind': ind_str})
 
 db = SessionLocal()
 
+# FIRST: Update ANY product that doesn't have a vertical-related category
+valid_cats = set(cat_map.values())
+for p in db.query(models.Product).all():
+    if p.category not in valid_cats:
+        p.category = "Food Ingredients"
+
+# SECOND: Sync known variants
 for item in items:
     name = item['name']
     slug = slugify(name)
@@ -114,27 +117,16 @@ for item in items:
     existing = db.query(models.Product).filter(models.Product.slug == slug).first()
     if existing:
         existing.category = primary_cat
-        # Fix any nulls
         if existing.sku_name is None: existing.sku_name = name
-        if existing.status is None: existing.status = "Active"
     else:
-        print(f"Adding: {name} as {primary_cat}")
         db.add(models.Product(
-            name=name,
-            slug=slug,
-            category=primary_cat,
-            sku_name=name,
-            status="Active",
-            product_overview=f"Premium {name}.",
-            country_of_origin="Various",
-            quality="High Grade",
-            generic_specs="[]",
-            applications="",
-            packaging="Standard 25kg bags",
-            certifications="ISO, FSSAI",
+            name=name, slug=slug, category=primary_cat, sku_name=name, status="Active",
+            product_overview=f"Premium {name}.", country_of_origin="Various",
+            quality="High Grade", generic_specs="[]", applications="",
+            packaging="Standard 25kg bags", certifications="ISO, FSSAI",
             image="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=800&auto=format&fit=crop"
         ))
 
 db.commit()
 db.close()
-print("Database Sync Complete with Vertical Mapping!")
+print("Database Sync Complete with AGGRESSIVE Vertical Mapping!")

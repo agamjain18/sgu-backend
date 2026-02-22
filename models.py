@@ -19,6 +19,7 @@ class Product(Base):
     status = Column(String)
     image = Column(Text)
     is_bestseller = Column(Boolean, default=False)
+    industry = Column(String, index=True, nullable=True) # e.g. bakery, dairy
 
 class IndustryProduct(Base):
     __tablename__ = "industry_products"

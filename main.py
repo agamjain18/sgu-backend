@@ -37,23 +37,44 @@ def migrate_db():
     columns = [col['name'] for col in inspector.get_columns('products')]
     
     with engine.connect() as conn:
-        if 'is_bestseller' not in columns:
-            print("Adding is_bestseller column...")
-            conn.execute(text("ALTER TABLE products ADD COLUMN is_bestseller BOOLEAN DEFAULT 0"))
-            conn.commit()
-        if 'slug' not in columns:
-            print("Adding slug column...")
-            conn.execute(text("ALTER TABLE products ADD COLUMN slug VARCHAR"))
-            conn.commit()
-            # Generate slugs for existing products
+        # Define all columns that should be in the products table
+        required_columns = {
+            'is_bestseller': "BOOLEAN DEFAULT 0",
+            'slug': "VARCHAR",
+            'industry': "VARCHAR",
+            'sku_name': "VARCHAR",
+            'country_of_origin': "VARCHAR",
+            'quality': "VARCHAR",
+            'product_overview': "TEXT",
+            'generic_specs': "TEXT",
+            'applications': "TEXT",
+            'packaging': "TEXT",
+            'certifications': "TEXT",
+            'status': "VARCHAR"
+        }
+        
+        for col_name, col_type in required_columns.items():
+            if col_name not in columns:
+                print(f"Adding {col_name} column...")
+                try:
+                    conn.execute(text(f"ALTER TABLE products ADD COLUMN {col_name} {col_type}"))
+                    conn.commit()
+                except Exception as e:
+                    print(f"Error adding column {col_name}: {e}")
+
+        # Regenerate slugs if needed
+        columns_after = [col['name'] for col in inspector.get_columns('products')]
+        if 'slug' in columns_after:
             from sqlalchemy.orm import Session
             db = SessionLocal()
-            products = db.query(models.Product).all()
-            for p in products:
-                if not p.slug:
+            products = db.query(models.Product).filter(models.Product.slug == None).all()
+            if products:
+                print(f"Generating slugs for {len(products)} products...")
+                for p in products:
                     p.slug = slugify(p.name)
-            db.commit()
+                db.commit()
             db.close()
+            
     print("Database migration check complete.")
 
 migrate_db()

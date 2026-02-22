@@ -16,6 +16,7 @@ class ProductBase(BaseModel):
     status: Optional[str] = "Active"
     image: Optional[str] = ""
     is_bestseller: Optional[bool] = False
+    industry: Optional[str] = "" # e.g. bakery, dairy
 
 class ProductCreate(ProductBase):
     pass

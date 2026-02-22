@@ -22,51 +22,69 @@ print("Clearing database...")
 models.Base.metadata.drop_all(bind=engine)
 models.Base.metadata.create_all(bind=engine)
 
-csv_data = """Skimmed Milk Powder,Milk & Related Product,Dairy Ingredients
-Whole Milk Powder,Milk & Related Product,Dairy Ingredients
-Cheese Powder,Milk & Related Product,Dairy Ingredients
-Calcium Caseinate,Milk & Related Product,Dairy Ingredients
-Calcium Propionate,Preservative,"Dairy, Health, Beverage, Ice Cream, Confectionery, Bakery"
-Sodium Propionate,Preservative,"Dairy, Health, Beverage, Ice Cream, Confectionery, Bakery"
-Potassium Sorbate,Preservative,"Dairy, Health, Beverage, Ice Cream, Confectionery, Bakery"
-Sorbic Acid,Preservative,"Dairy, Health, Beverage, Ice Cream, Confectionery, Bakery"
-Sodium Benzoate,Preservative,"Dairy, Health, Beverage, Ice Cream, Confectionery, Bakery"
-PGMS / Datem / DMG,Preservative / Emulsifier,"Dairy, Health, Beverage, Ice Cream, Confectionery, Bakery"
-Fructose,Sweetener & Polyol,"Dairy, Ice Cream, Confectionery, Bakery"
-Monk Fruit Extract,Sweetener & Polyol,"Dairy, Ice Cream, Confectionery, Bakery"
-Maltitol / Acesulfame K,Sweetener & Polyol,"Dairy, Ice Cream, Confectionery, Bakery"
-Sucralose / Stevia,Sweetener & Polyol,"Dairy, Ice Cream, Confectionery, Bakery"
-Aspartame / Neotame / Xylitol,Sweetener & Polyol,"Dairy, Ice Cream, Confectionery, Bakery"
-Soya Protein Isolate 90 %,Protein,All Categories
-Soya Protein Concentrate,Protein,All Categories
-Functional Whey Protein Concentrate 80 %,Protein,All Categories
-Instant Whey Protein Concentrate 80 %,Protein,All Categories
-Whey Protein Isolate,Protein,All Categories
+csv_data = """AAKG,Amino Acids,"Bakery, Confectionery, Beverages, Health & Nutrition"
+Alcarnitine,Amino Acids,"Bakery, Confectionery, Beverages, Health & Nutrition"
+BCAA 2:1:1 Instant Vegan,Amino Acids,"Bakery, Confectionery, Beverages, Health & Nutrition"
+Beta Alanine,Amino Acids,"Bakery, Confectionery, Beverages, Health & Nutrition"
+Citrulline Malate,Amino Acids,"Bakery, Confectionery, Beverages, Health & Nutrition"
+Creatine Mono Hydrate,Amino Acids,"Bakery, Confectionery, Beverages, Health & Nutrition"
+L-Arginine,Amino Acids,"Bakery, Confectionery, Beverages, Health & Nutrition"
+L-Glutamine,Amino Acids,"Bakery, Confectionery, Beverages, Health & Nutrition"
+L-Isoleucine,Amino Acids,"Bakery, Confectionery, Beverages, Health & Nutrition"
+L-Valine,Amino Acids,"Bakery, Confectionery, Beverages, Health & Nutrition"
+Alkalized Cocoa Powder,Cocoa,"Bakery, Confectionery, Ice Cream & Toppings, Beverages, Health & Nutrition"
+Dark Brown Cocoa Powder,Cocoa,"Bakery, Confectionery, Ice Cream & Toppings, Beverages, Health & Nutrition"
+Light Brown Cocoa Powder,Cocoa,"Bakery, Confectionery, Ice Cream & Toppings, Beverages, Health & Nutrition"
+Natural Cocoa Powder,Cocoa,"Bakery, Confectionery, Ice Cream & Toppings, Beverages, Health & Nutrition"
+Regular Brown Cocoa Powder,Cocoa,"Bakery, Confectionery, Ice Cream & Toppings, Beverages, Health & Nutrition"
+Non GMO Soya Lecithin Liquid,Emulsifier,All Categories
+Non GMO Soya Lecithin Powder,Emulsifier,All Categories
+Non GMO Soya Lyso Lecithin Liquid,Emulsifier,All Categories
+Non GMO Soya Lyso Lecithin Powder,Emulsifier,All Categories
+Non GMO Sunflower Lecithin Liquid,Emulsifier,All Categories
+Non GMO Sunflower Lecithin Powder,Emulsifier,All Categories
+Non GMO Sunflower Lyso Lecithin Liquid,Emulsifier,All Categories
+Non GMO Sunflower Lyso Lecithin Powder,Emulsifier,All Categories
+Oat Fiber,Fiber,"Bakery, Ice Cream & Toppings, Health & Nutrition, Beverages"
+Polydextrose,Fiber,"Bakery, Ice Cream & Toppings, Health & Nutrition, Beverages"
+Soy Fiber,Fiber,"Bakery, Ice Cream & Toppings, Health & Nutrition, Beverages"
+Wheat Fiber,Fiber,"Bakery, Ice Cream & Toppings, Health & Nutrition, Beverages"
+Carrageenan (Dairy Grade),Gums / Thickening Agent,All Categories
+Guar Gum,Gums / Thickening Agent,All Categories
+Gum Acacia,Gums / Thickening Agent,All Categories
+Pectin Jam Grade,Gums / Thickening Agent,All Categories
+Pectin Jelly Grade,Gums / Thickening Agent,All Categories
+Type II Collagen,Gums / Thickening Agent,"Health & Nutrition, Beverages"
+Xanthan Gum,Gums / Thickening Agent,All Categories
+Calcium Caseinate,Milk & Related Product,"Bakery, Health & Nutrition, Dairy, Ice Cream & Toppings"
+Cheese Powder,Milk & Related Product,"Bakery, Confectionery, Sauces & Condiments, Dairy"
+Skimmed Milk Powder,Milk & Related Product,All Categories
+Whole Milk Powder,Milk & Related Product,All Categories
+Calcium Propionate,Preservative,"Bakery, Dairy, Sauces & Condiments"
+DATEM,Preservative,"Bakery, Edible Fats, Dairy"
+DMG,Preservative,"Bakery, Confectionery, Ice Cream & Toppings, Dairy, Edible Fats"
+PGMS,Preservative,"Bakery, Confectionery, Ice Cream & Toppings, Dairy, Edible Fats"
+Potassium Sorbate,Preservative,All Categories
+Sodium Benzoate,Preservative,All Categories
+Sodium Propionate,Preservative,"Bakery, Dairy"
+Sorbic Acid,Preservative,All Categories
+Functional Whey Protein Concentrate 80%,Protein,"Dairy, Bakery, Health & Nutrition, Ice Cream & Toppings"
+Instant Whey Protein Concentrate 80%,Protein,"Dairy, Bakery, Health & Nutrition, Ice Cream & Toppings"
 Pea Protein Isolate,Protein,All Categories
-Vital Wheat Gluten (VWG),Protein,All Categories
-Sweet Whey Powder (SWP),Protein,"Beverage, Ice Cream, Confectionery, Bakery"
-Xanthan Gum,Gums/Thickening Agent,All Categories
-Guar Gum,Gums/Thickening Agent,All Categories
-Carrageenan (Dairy Grade),Gums/Thickening Agent,All Categories
-Pectin (Jam / Jelly Grade),Gums/Thickening Agent,All Categories
-Type II Collagen,Gums/Thickening Agent,All Categories
-Natural Cocoa Powder,Cocoa,"Sauces, Health, Beverage, Ice Cream, Confectionery, Bakery"
-Light/Dark/Regular Brown Cocoa,Cocoa,"Sauces, Health, Beverage, Ice Cream, Confectionery, Bakery"
-Alkalized Cocoa Powder,Cocoa,"Sauces, Health, Beverage, Ice Cream, Confectionery, Bakery"
-DM Cocoa,Cocoa,"Sauces, Health, Beverage, Ice Cream, Confectionery, Bakery"
-BCAA 2:1:1 Instant Vegan,Amino Acids,"Health & Nutrition, Beverage"
-Beta Alanine / Citrulline Malate,Amino Acids,"Health & Nutrition, Beverage"
-L-Arginine / Alcarnitine,Amino Acids,"Health & Nutrition, Beverage"
-Creatine Mono Hydrate,Amino Acids,"Health & Nutrition, Beverage"
-L-Glutamine / AAKG,Amino Acids,"Health & Nutrition, Beverage"
-L-Isoleucine / L-Valine,Amino Acids,"Health & Nutrition, Beverage"
-Polydextrose / Soy Fiber,Fibers,Ice Cream & Toppings
-Gum Acacia / Oat Fiber / Wheat Fiber,Fibers,Ice Cream & Toppings
-Non GMO Soya Lecithin (Powder/Liquid),Emulsifier,"Ice Cream, Confectionery, Edible Fats"
-Non GMO Sunflower Lecithin (Powder/Liquid),Emulsifier,"Ice Cream, Confectionery, Edible Fats"
-Full Fat Soya Flour / Grit,Fats,Edible Fats & Others
-Soya Flour / Grit (Untoasted/Toasted),Fats,Edible Fats & Others
-Textured Vegetable Protein (Square/Granules),Vegetable Protein,Edible Fats & Others"""
+Soya Protein Concentrate,Protein,All Categories
+Soya Protein Isolate 90%,Protein,All Categories
+Sweet Whey Powder (SWP),Protein,All Categories
+Vital Wheat Gluten (VWG),Protein,"Bakery, Health & Nutrition, Sauces & Condiments"
+Whey Protein Isolate,Protein,"Health & Nutrition, Dairy, Beverages"
+Acesulfame K,Sweetener & Polyol,All Categories
+Aspartame,Sweetener & Polyol,All Categories
+Fructose,Sweetener & Polyol,All Categories
+Maltitol,Sweetener & Polyol,All Categories
+Monk Fruit Extract,Sweetener & Polyol,All Categories
+Neotame,Sweetener & Polyol,All Categories
+Stevia,Sweetener & Polyol,All Categories
+Sucralose,Sweetener & Polyol,All Categories
+Xylitol,Sweetener & Polyol,All Categories"""
 
 # Manual splitting of combined names
 def split_slash_names(name):
@@ -147,8 +165,50 @@ for item in items_data:
     name = item['name']
     slug = slugify(name)
     primary_cat = get_primary_category(item['ind_str'])
-    img_url = pool[c % len(pool)]
+    # Multiple logos for the brand/certification row
+    logos = [
+        "https://sgutrade.com/sgu/logo.png",
+        "/sgu/download-removebg-preview (6).png", # FSSAI
+        "/sgu/download-removebg-preview (5).png", # ISO
+        "/sgu/download-removebg-preview (4).png"  # ISO 22000
+    ]
+    img_url = f"{pool[c % len(pool)]},{','.join(logos)}"
     c += 1
+
+    # Generate category-based generic specs
+    specs_templates = {
+        "Amino Acids": [
+            {"property": "Assay", "value": "99.0% - 101.0%"},
+            {"property": "Physical Form", "value": "White Crystalline Powder"},
+            {"property": "Heavy Metals", "value": "≤ 10ppm"},
+            {"property": "Loss on Drying", "value": "≤ 0.5%"}
+        ],
+        "Cocoa": [
+            {"property": "Fat Content", "value": "10% - 12%"},
+            {"property": "pH Value", "value": "5.0 - 8.0"},
+            {"property": "Fineness", "value": "≥ 99.5%"},
+            {"property": "Moisture", "value": "≤ 5.0%"}
+        ],
+        "Emulsifier": [
+            {"property": "Acid Value", "value": "≤ 3.0 mg KOH/g"},
+            {"property": "Iodine Value", "value": "Dependent on Grade"},
+            {"property": "Purity", "value": "Food Grade Standard"},
+            {"property": "Appearance", "value": "Clear Liquid/Standard Powder"}
+        ],
+        "Gums / Thickening Agent": [
+            {"property": "Viscosity", "value": "Standard Range"},
+            {"property": "Ash Content", "value": "≤ 1.0%"},
+            {"property": "pH (1% solution)", "value": "6.0 - 8.0"},
+            {"property": "Mesh Size", "value": "80-200 Mesh"}
+        ]
+    }
+    
+    cat_specs = specs_templates.get(item['raw_cat'], [
+        {"property": "Quality Grade", "value": "Food Grade (FCC)"},
+        {"property": "Purity", "value": "≥ 99%"},
+        {"property": "Packaging", "value": "25kg Paper Bag"},
+        {"property": "Solubility", "value": "Standard Condition"}
+    ])
 
     # 1. Add to Products table (for main catatlog)
     existing_p = db.query(models.Product).filter(models.Product.slug == slug).first()
@@ -156,7 +216,7 @@ for item in items_data:
         db.add(models.Product(
             name=name, slug=slug, category=primary_cat, sku_name=name, status="Active",
             product_overview=f"Premium {name}.", country_of_origin="Various",
-            quality="High Grade", generic_specs="[]", applications="",
+            quality="High Grade", generic_specs=json.dumps(cat_specs), applications="",
             packaging="Standard 25kg bags", certifications="ISO, FSSAI",
             image=img_url
         ))
